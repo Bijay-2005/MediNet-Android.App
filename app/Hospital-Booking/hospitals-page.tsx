@@ -6,12 +6,13 @@ import { HospitalCard } from "./HospitalCard";
 import { Button } from "@/components/ui/button";
 import { MapPin, ChevronDown } from "lucide-react";
 // Online hospital images from Unsplash
-const apolloHospital = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR3Hv53JzECdzjO8x3PVI4v16EkLR9LI_pRg&s";
-const careHospital = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop";
-const aiimsHospital = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop";
-const cardiologyHospital = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop";
-const orthopedicHospital = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop";
-const neurologyHospital = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop";
+const apolloHospital = "https://i.ytimg.com/vi/8ArVomFrFMA/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEogWShlMA8=&rs=AOn4CLCGtGq-xLZXhyHZ-xlGDNOfXWjoJQ";
+const careHospital = "https://tse3.mm.bing.net/th/id/OIP.H81ge2pJkWImJP9A-OBO4QHaE7?pid=Api&P=0&h=180";
+const aiimsHospital = "https://tse4.mm.bing.net/th/id/OIP.CQmoRg3f69OUWiB0Pc4zNwHaE8?pid=Api&P=0&h=180";
+const cardiologyHospital = "https://tse1.mm.bing.net/th/id/OIP.8j00QSPryTPt1-ThuMdgRgHaD4?pid=Api&P=0&h=180";
+const orthopedicHospital = "https://tse2.mm.bing.net/th/id/OIP.r5TrKM1wQmdPM_QyeTX2vgHaEh?pid=Api&P=0&h=180";
+const neurologyHospital = "https://tse1.mm.bing.net/th/id/OIP.Th4xP-bXxZJL7l_TjirQRwHaE8?pid=Api&P=0&h=180";
+
 
 // Simple distance calculation function
 const updateHospitalDistances = (hospitals: any[], userLocation: { lat: number; lng: number } | null) => {
@@ -41,10 +42,10 @@ const mockHospitals = [
   {
     id: "1",
     name: "Apollo Hospitals Bhubaneswar",
-    image: apolloHospital,
+    image: "https://i.ytimg.com/vi/8ArVomFrFMA/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEogWShlMA8=&rs=AOn4CLCGtGq-xLZXhyHZ-xlGDNOfXWjoJQ",
     rating: 4.8,
     location: "Gajapati Nagar, Bhubaneswar",
-    phone: "+91-1860-500-1066",
+    phone: "‪+91-1860-500-1066‬",
     bedCount: 350,
     specialty: "Multi-specialty",
     isEmergency: true,
@@ -52,7 +53,7 @@ const mockHospitals = [
   {
     id: "2",
     name: "CARE Hospitals",
-    image: careHospital,
+    image: "https://icco.co.in/wp-content/uploads/2019/02/Pic-1030x773.jpeg",
     rating: 4.7,
     location: "Chandrasekharpur, Bhubaneswar",
     phone: "1800-108-1234",
@@ -63,10 +64,10 @@ const mockHospitals = [
   {
     id: "3",
     name: "AIIMS Bhubaneswar",
-    image: aiimsHospital,
+    image:"https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/784/2018/4/3/All-India-Institute-of-Medical-Sciences-Bhubaneswar-1.jpg",
     rating: 4.9,
     location: "Sijua, Patrapada, Bhubaneswar",
-    phone: "+91-674-247-6789",
+    phone: "‪+91-674-247-6789‬",
     bedCount: 750,
     specialty: "Multi-specialty",
     isEmergency: true,
@@ -74,11 +75,11 @@ const mockHospitals = [
   },
   {
     id: "4",
-    name: "Kalinga Heart Foundation",
-    image: cardiologyHospital,
+    name: "Amri Hospital",
+    image: "https://www.thetechoutlook.com/wp-content/uploads/2022/07/Representational-image-3.jpg",
     rating: 4.6,
     location: "Plot No-1, Kalinga Nagar",
-    phone: "+91-674-230-0000",
+    phone: "‪+91-674-230-0000‬",
     bedCount: 120,  
     specialty: "Cardiology",
     isEmergency: true,
@@ -86,10 +87,10 @@ const mockHospitals = [
   {
     id: "5",
     name: "Manipal Hospital",
-    image: orthopedicHospital,
+    image:"https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/hospitals/bhubaneswar-hospital-image.jpg",
     rating: 4.4,
     location: "Khandagiri, Bhubaneswar",
-    phone: "+91-674-235-0000",
+    phone: "‪+91-674-235-0000‬",
     bedCount: 400,
     specialty: "Orthopedics",
     isEmergency: true,
@@ -97,10 +98,10 @@ const mockHospitals = [
   {
     id: "6",
     name: "Sunshine Hospital",
-    image: neurologyHospital,
+    image: "https://i.ytimg.com/vi/dnsBDTb9sKc/maxresdefault.jpg",
     rating: 4.5,
     location: "Laxmisagar,Rasulgarh",
-    phone: "+91-674-258-9999",
+    phone: "‪+91-674-258-9999‬",
     bedCount: 180,
     specialty: "Neurology",
     isEmergency: true,
@@ -108,7 +109,7 @@ const mockHospitals = [
   {
     id: "7",
     name: "SUM Ultimate Medicare",
-    image: apolloHospital,
+    image: "https://odishabytes.com/wp-content/uploads/2021/05/WhatsApp-Image-2021-05-24-at-17.39.30.jpeg",
     rating: 4.3,
     location: "K8, Kalinga Nagar, Bhubaneswar",
     phone: "+91-674-235-8888",
@@ -119,7 +120,7 @@ const mockHospitals = [
   {
     id: "8",
     name: "Capital Hospital",
-    image: careHospital,
+    image: "https://capitalhospital.nic.in/sites/default/files/DSC_0027_0.jpg",
     rating: 4.2,
     location: "Unit-6, Bhubaneswar",
     phone: "+91-674-253-9999",
@@ -129,8 +130,8 @@ const mockHospitals = [
   },
   {
     id: "9",
-    name: "Manipal Hospitals",
-    image: cardiologyHospital,
+    name: "Cardiacare Hospitals",
+    image: "https://www.topteny.com/wp-content/uploads/2019/05/Massachusetts-General-Hospital.jpg",
     rating: 4.7,
     location: "Plot No. 1, Bhubaneswar",
     phone: "+91-674-663-3333",
@@ -141,7 +142,7 @@ const mockHospitals = [
   {
     id: "10",
     name: "Kalinga Institute of Medical Sciences",
-    image: aiimsHospital,
+    image: "https://kims.kiit.ac.in/wp-content/uploads/2022/08/KIMS-Super-Speciality-Hospital-Bhubaneswar-5-1200x890.jpg",
     rating: 4.6,
     location: "KIIT Campus, Patia, Bhubaneswar",
     phone: "+91-674-272-7777",
@@ -153,7 +154,7 @@ const mockHospitals = [
   {
     id: "11",
     name: "Sparsh Hospital",
-    image: orthopedicHospital,
+    image:"https://cdn.hexahealth.com/Image/32ad325d-fda6-43e9-aa48-e41a231559fb.jpg",
     rating: 4.4,
     location: "Saheed Nagar, Bhubaneswar",
     phone: "+91-674-654-3210",
@@ -164,7 +165,7 @@ const mockHospitals = [
   {
     id: "12",
     name: "Medicover Hospitals",
-    image: neurologyHospital,
+    image: "https://www.medicoverhospitals.in/images/hospitals/medicover-bangalore.webp",
     rating: 4.5,
     location: "Patia, Bhubaneswar",
     phone: "+91-674-888-9999",
@@ -172,6 +173,18 @@ const mockHospitals = [
     specialty: "Multi-specialty",
     isEmergency: true,
   },
+  {
+    id:"13",
+    name:"Bagchi-sri shankar cancer centre and research institute",
+    image:"https://cdn.prod.website-files.com/65f3e468dffb0bdbd0527514/660eaee4b5f42b6f29b77910_bhubaneswar-homepage_pg-01_m_1.webp",
+    rating:4.9,
+    location:" Badaraghunathpur, Chandiheta, Odisha 752054",
+    phone:"+91-674-272-7777",
+    bedCount:750,
+    specialty:"Cancer Care",
+    isEmergency:true,
+    isGovernment:false,
+  }
 ];
 
 const HospitalBooking = () => {
