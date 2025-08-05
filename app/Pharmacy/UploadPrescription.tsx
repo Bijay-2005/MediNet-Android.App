@@ -51,16 +51,16 @@ export function UploadPrescription() {
 
   return (
     <Card className="bg-gradient-to-br from-orange-50 via-white to-orange-100 shadow-lg border-orange-200 animate-fade-in-up hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-center flex items-center justify-center gap-2 text-orange-600">
-          <Upload className="h-6 w-6 text-orange-600 animate-bounce" />
+      <CardHeader className="pb-3 sm:pb-4">
+        <CardTitle className="text-lg sm:text-xl font-bold text-center flex items-center justify-center gap-2 text-orange-600">
+          <Upload className="h-5 w-5 sm:h-6 sm:w-6 text-orange-600 animate-bounce" />
           Upload Your Prescription
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div
           className={`
-            border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300
+            border-2 border-dashed rounded-xl p-4 sm:p-6 lg:p-8 text-center transition-all duration-300
             ${isDragOver 
               ? 'border-orange-500 bg-orange-100 scale-105 shadow-lg' 
               : 'border-orange-300 hover:border-orange-500 hover:bg-orange-50'
@@ -70,22 +70,22 @@ export function UploadPrescription() {
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
-          <div className="space-y-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-              <FileText className="h-8 w-8 text-primary" />
+          <div className="space-y-3 sm:space-y-4">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+              <FileText className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">Drag & Drop Your Prescription</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">Drag & Drop Your Prescription</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
                 Or click to browse and upload your prescription image
               </p>
             </div>
-            <div className="flex gap-3 justify-center">
-              <Button variant="default" size="lg" className="gap-2 bg-orange-600 hover:bg-orange-700 text-white transition-all duration-200 hover:scale-105 shadow-md" onClick={handleBrowseFiles}>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
+              <Button variant="default" size="sm" className="gap-2 bg-orange-600 hover:bg-orange-700 text-white transition-all duration-200 hover:scale-105 shadow-md" onClick={handleBrowseFiles}>
                 <Upload className="h-4 w-4" />
                 Browse Files
               </Button>
-              <Button variant="default" size="lg" className="gap-2 bg-orange-600 hover:bg-orange-700 text-white transition-all duration-200 hover:scale-105 shadow-md" onClick={handleTakePhoto}>
+              <Button variant="default" size="sm" className="gap-2 bg-orange-600 hover:bg-orange-700 text-white transition-all duration-200 hover:scale-105 shadow-md" onClick={handleTakePhoto}>
                 <Camera className="h-4 w-4" />
                 Take Photo
               </Button>

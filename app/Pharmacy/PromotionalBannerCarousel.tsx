@@ -73,42 +73,42 @@ export function PromotionalBannerCarousel() {
   const IconComponent = currentBanner.icon
 
   return (
-    <div className="space-y-4 animate-fade-in delay-200">
+    <div className="space-y-3 sm:space-y-4 animate-fade-in delay-200">
       <Card className={`bg-gradient-to-r ${currentBanner.gradient} text-white border-0 shadow-lg relative overflow-hidden transition-all duration-500 hover:shadow-xl`}>
-        <CardContent className="p-6 h-48 flex flex-col justify-between relative">
+        <CardContent className="p-4 sm:p-6 h-40 sm:h-48 flex flex-col justify-between relative">
           {/* Background Pattern */}
-          <div className="absolute top-0 right-0 w-24 h-24 opacity-20">
+          <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 opacity-20">
             <div className="w-full h-full bg-white/20 rounded-full"></div>
           </div>
           
           {/* Symbol Circle */}
-          <div className="absolute top-4 right-4 w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-            <span className="text-2xl opacity-80">{currentBanner.symbol}</span>
+          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <span className="text-lg sm:text-2xl opacity-80">{currentBanner.symbol}</span>
           </div>
           
           {/* Content */}
           <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                <IconComponent className="h-5 w-5 text-white" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold">{currentBanner.title}</h3>
+              <h3 className="text-lg sm:text-xl font-bold">{currentBanner.title}</h3>
             </div>
             
-            <div className="space-y-1 mb-4">
-              <p className="text-lg font-semibold">{currentBanner.subtitle}</p>
-              <p className="text-sm opacity-90">{currentBanner.condition}</p>
+            <div className="space-y-1 mb-3 sm:mb-4">
+              <p className="text-base sm:text-lg font-semibold">{currentBanner.subtitle}</p>
+              <p className="text-xs sm:text-sm opacity-90">{currentBanner.condition}</p>
             </div>
           </div>
           
           {/* Buttons */}
-          <div className="flex gap-2 relative z-10">
+          <div className="flex gap-1 sm:gap-2 relative z-10">
             {currentBanner.buttons.map((button, index) => (
               <Button
                 key={index}
                 variant="ghost"
                 size="sm"
-                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 transition-all duration-200 hover:scale-105 rounded-full px-4 py-2 text-sm font-medium"
+                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 transition-all duration-200 hover:scale-105 rounded-full px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium"
               >
                 {button.text}
               </Button>
@@ -118,13 +118,13 @@ export function PromotionalBannerCarousel() {
       </Card>
       
       {/* Indicator Dots */}
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-1 sm:gap-2">
         {banners.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'bg-white w-6' : 'bg-white/30'
+              index === currentIndex ? 'bg-white w-4 sm:w-6' : 'bg-white/30'
             }`}
           />
         ))}

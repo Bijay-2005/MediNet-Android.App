@@ -9,7 +9,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-blue-50"> {/* Changed to bg-blue-50 for baby blue */}
       {/* Mobile-first responsive container */}
-      <div className="max-w-md mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-md mx-auto px-3 py-3 space-y-4">
         {/* Profile Card */}
         <ProfileCard />
         
@@ -29,7 +29,7 @@ const Profile = () => {
         <NavigationSections />
         
         {/* PWA Footer */}
-        <div className="text-center text-xs text-muted-foreground pt-4 pb-8">
+        <div className="text-center text-xs text-muted-foreground pt-2 pb-6">
           <p>Medical Dashboard PWA v1.0</p>
           <p>Always consult healthcare providers for medical decisions</p>
         </div>

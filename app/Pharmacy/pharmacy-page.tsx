@@ -1,3 +1,4 @@
+"use client"
 import { SearchSection } from "./SearchSection";  
 import { UploadPrescription } from "./UploadPrescription";
 import { CategoriesGrid } from "./CatagoriesGrid";
@@ -49,11 +50,11 @@ const Index = () => {
       <main className="flex-1 overflow-auto">
         {/* Header */}
         <header className="sticky top-0 z-30 bg-gradient-to-r from-green-600 via-green-500 to-green-400 backdrop-blur supports-[backdrop-filter]:bg-green-500/95 border-b border-green-700 shadow-xl">
-          <div className="flex h-16 items-center px-4 lg:px-6">
+          <div className="flex h-14 sm:h-16 items-center px-3 sm:px-4 lg:px-6">
             <div className="flex flex-col items-start gap-1">
               {/* MedPharma Logo */}
               <div className="flex items-center group">
-                <h1 className="text-xl font-bold text-white transition-all duration-300 group-hover:text-green-100 group-hover:scale-105 cursor-pointer">
+                <h1 className="text-lg sm:text-xl font-bold text-white transition-all duration-300 group-hover:text-green-100 group-hover:scale-105 cursor-pointer">
                   MedPharma
                 </h1>
               </div>
@@ -62,18 +63,18 @@ const Index = () => {
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className="gap-2 text-xs h-6 -ml-3 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white" 
+                className="gap-1 sm:gap-2 text-xs h-6 -ml-3 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white" 
                 onClick={() => setIsLocationModalOpen(true)}
               >
                 <MapPin className="h-3 w-3 text-white" />
-                <span className="text-xs text-white/90 hover:text-white transition-colors">{selectedLocation}</span>
+                <span className="text-xs text-white/90 hover:text-white transition-colors max-w-[80px] sm:max-w-none truncate">{selectedLocation}</span>
               </Button>
             </div>
             
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-1 sm:gap-2">
               {/* Cart */}
               <CartSheet cartItems={cartItems} onUpdateQuantity={updateQuantity} onRemoveItem={removeItem} onCheckout={handleCheckout}>
-                <Button variant="ghost" size="sm" className="gap-2 relative h-10 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white">
+                <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 relative h-9 sm:h-10 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white">
                   <ShoppingCart className="h-4 w-4 text-white" />
                   {getTotalItems() > 0 && <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs flex items-center justify-center bg-red-500 animate-pulse">
                       {getTotalItems()}
@@ -84,7 +85,7 @@ const Index = () => {
               
               {/* Sidebar Menu Button */}
               <SidebarSheet>
-                <Button variant="ghost" size="sm" className="gap-2 h-10 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white">
+                <Button variant="ghost" size="sm" className="gap-2 h-9 sm:h-10 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white">
                   <Menu className="h-4 w-4 text-white" />
                 </Button>
               </SidebarSheet>
@@ -93,10 +94,10 @@ const Index = () => {
         </header>
 
         {/* Main Content */}
-        <div className="container mx-auto px-4 lg:px-6 py-8 space-y-8">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 space-y-4 sm:space-y-6 lg:space-y-8">
           {/* Shop Medicines Header */}
           <div className="flex items-center animate-fade-in">
-            <h1 className="text-2xl font-bold text-green-600">
+            <h1 className="text-xl sm:text-2xl font-bold text-green-600">
               Shop Medicines
             </h1>
           </div>
@@ -110,7 +111,6 @@ const Index = () => {
           {/* Upload Prescription */}
           <UploadPrescription />
 
-
           {/* Categories Grid */}
           <CategoriesGrid />
 
@@ -121,7 +121,7 @@ const Index = () => {
           <QuickActions />
 
           {/* Footer */}
-          <footer className="mt-16 py-8 border-t text-center text-sm text-muted-foreground">
+          <footer className="mt-8 sm:mt-12 lg:mt-16 py-6 sm:py-8 pb-20 sm:pb-8 border-t text-center text-sm text-muted-foreground">
             <div className="space-y-2">
               <p>© 2024 MedPharma. All rights reserved.</p>
               <p>

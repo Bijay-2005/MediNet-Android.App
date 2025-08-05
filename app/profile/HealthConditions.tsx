@@ -50,31 +50,31 @@ export const HealthConditions = () => {
 
   return (
     <>
-      <Card className="p-4 shadow-soft">
-        <div className="flex items-center justify-between mb-4">
+      <Card className="p-3 shadow-soft">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <Activity className="w-5 h-5 text-primary" />
-            <h3 className="text-lg font-semibold">Health Conditions</h3>
+            <Activity className="w-4 h-4 text-primary" />
+            <h3 className="text-base font-semibold">Health Conditions</h3>
           </div>
           <Button 
             variant="outline" 
             size="sm" 
             onClick={() => setShowAddDialog(true)}
-            className="gap-1"
+            className="gap-1 text-xs"
           >
-            <Plus className="w-4 h-4" />
+            <Plus className="w-3 h-3" />
             Add Condition
           </Button>
         </div>
         
-        <div className="space-y-3">
+        <div className="space-y-2">
           {conditions.map((condition) => (
-            <div key={condition.id} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
-              <div className="flex items-center gap-3">
+            <div key={condition.id} className="flex items-center justify-between p-2 bg-muted/30 rounded-lg">
+              <div className="flex items-center gap-2">
                 <Badge variant="secondary" className="text-xs">
                   {condition.tag}
                 </Badge>
-                <span className="text-sm font-medium">{condition.name}</span>
+                <span className="text-xs font-medium">{condition.name}</span>
               </div>
               <Badge className={`text-xs ${getSeverityColor(condition.severity)}`}>
                 {condition.severity}
@@ -83,17 +83,17 @@ export const HealthConditions = () => {
           ))}
         </div>
         
-        <div className="mt-4 flex items-center gap-4 text-xs">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-destructive"></div>
+        <div className="mt-3 flex items-center gap-3 text-xs">
+          <div className="flex items-center gap-1">
+            <div className="w-2 h-2 rounded-full bg-destructive"></div>
             <span>Severe</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-warning"></div>
+          <div className="flex items-center gap-1">
+            <div className="w-2 h-2 rounded-full bg-warning"></div>
             <span>Moderate</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-success"></div>
+          <div className="flex items-center gap-1">
+            <div className="w-2 h-2 rounded-full bg-success"></div>
             <span>Controlled</span>
           </div>
         </div>
@@ -102,20 +102,21 @@ export const HealthConditions = () => {
       <Dialog open={showAddDialog} onOpenChange={setShowAddDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Add Health Condition</DialogTitle>
+            <DialogTitle className="text-base">Add Health Condition</DialogTitle>
           </DialogHeader>
-          <div className="space-y-4 py-4">
+          <div className="space-y-3 py-4">
             <div className="space-y-2">
-              <Label htmlFor="condition-name">Condition Name</Label>
+              <Label htmlFor="condition-name" className="text-xs">Condition Name</Label>
               <Input
                 id="condition-name"
                 value={newCondition.name}
                 onChange={(e) => setNewCondition({...newCondition, name: e.target.value})}
                 placeholder="Enter health condition"
+                className="text-xs"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="severity">Severity</Label>
+              <Label htmlFor="severity" className="text-xs">Severity</Label>
               <Select value={newCondition.severity} onValueChange={(value: any) => setNewCondition({...newCondition, severity: value})}>
                 <SelectTrigger>
                   <SelectValue />
@@ -129,10 +130,10 @@ export const HealthConditions = () => {
             </div>
           </div>
           <div className="flex justify-end gap-2">
-            <Button variant="outline" onClick={() => setShowAddDialog(false)}>
+            <Button variant="outline" onClick={() => setShowAddDialog(false)} size="sm">
               Cancel
             </Button>
-            <Button onClick={handleAddCondition}>
+            <Button onClick={handleAddCondition} size="sm">
               Add Condition
             </Button>
           </div>

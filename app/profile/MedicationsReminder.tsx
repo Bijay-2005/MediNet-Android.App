@@ -117,14 +117,14 @@ export const MedicationsReminders = () => {
 
   const getStatusBadge = (medication: Medication) => {
     if (medication.taken) {
-      return <Badge className="bg-success text-success-foreground">Taken</Badge>;
+      return <Badge className="bg-success text-success-foreground text-xs">Taken</Badge>;
     }
     
     switch (medication.status) {
       case 'overdue':
-        return <Badge className="bg-destructive text-destructive-foreground">Overdue</Badge>;
+        return <Badge className="bg-destructive text-destructive-foreground text-xs">Overdue</Badge>;
       case 'as-needed':
-        return <Badge variant="outline">As Needed</Badge>;
+        return <Badge variant="outline" className="text-xs">As Needed</Badge>;
       default:
         return null;
     }
@@ -140,22 +140,22 @@ export const MedicationsReminders = () => {
 
   return (
     <>
-      <Card className="p-4 shadow-soft">
-        <div className="flex items-center gap-2 mb-4">
-          <Pill className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-semibold">Medications & Reminders</h3>
+      <Card className="p-3 shadow-soft">
+        <div className="flex items-center gap-2 mb-3">
+          <Pill className="w-4 h-4 text-primary" />
+          <h3 className="text-base font-semibold">Medications & Reminders</h3>
         </div>
         
-        <div className="space-y-4">
+        <div className="space-y-3">
           {medications.map((medication) => (
-            <div key={medication.id} className="p-4 border rounded-lg space-y-3">
+            <div key={medication.id} className="p-3 border rounded-lg space-y-2">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-semibold">{medication.name}</h4>
+                    <h4 className="font-semibold text-sm">{medication.name}</h4>
                     {getStatusBadge(medication)}
                   </div>
-                  <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
+                  <div className="grid grid-cols-2 gap-1 text-xs text-muted-foreground">
                     <p><span className="font-medium">Dosage:</span> {medication.dosage}</p>
                     <p><span className="font-medium">Frequency:</span> {medication.frequency}</p>
                     <p><span className="font-medium">Next Dose:</span> {medication.nextDose}</p>
@@ -166,9 +166,9 @@ export const MedicationsReminders = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => removeMedication(medication.id)}
-                  className="text-muted-foreground hover:text-destructive p-1"
+                  className="text-muted-foreground hover:text-destructive p-1 h-6 w-6"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-3 h-3" />
                 </Button>
               </div>
               
@@ -177,19 +177,19 @@ export const MedicationsReminders = () => {
                   variant={medication.taken ? "taken" : "success"}
                   size="sm"
                   onClick={() => handleTakeMedication(medication.id)}
-                  className="flex-1"
+                  className="flex-1 text-xs h-8"
                 >
-                  <Check className="w-4 h-4 mr-1" />
+                  <Check className="w-3 h-3 mr-1" />
                   {medication.taken ? "Taken ✓" : "Mark Taken"}
                 </Button>
                 <Button
                   variant="medical"
                   size="sm"
                   onClick={() => handleConfigureReminder(medication)}
-                  className="flex-1"
+                  className="flex-1 text-xs h-8"
                 >
-                  <Settings className="w-4 h-4 mr-1" />
-                  Configure Smart Reminder
+                  <Settings className="w-3 h-3 mr-1" />
+                  Configure Reminder
                 </Button>
               </div>
               
@@ -203,9 +203,9 @@ export const MedicationsReminders = () => {
           
           <Button 
             onClick={() => setShowAddDialog(true)}
-            className="w-full bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white border-0 rounded-xl py-3 font-medium shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+            className="w-full bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white border-0 rounded-xl py-2 font-medium shadow-lg hover:shadow-xl transition-all duration-300 mt-3 text-sm"
           >
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-3 w-3 mr-2" />
             Add New Medication
           </Button>
         </div>

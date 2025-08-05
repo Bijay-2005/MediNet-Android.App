@@ -412,18 +412,20 @@ export default function MediNetApp() {
                 setShowAllDepartments(true);
               }}
             />;
-          // Add more cases for other departments as you implement them
           default:
             return (
-              <div className="flex flex-col items-center justify-center min-h-screen">
-                <h1 className="text-3xl font-bold text-red-600 mb-4">404</h1>
-                <p className="text-lg text-gray-700 mb-2">Department Not Found: {selectedDepartment || 'No department selected'}</p>
-                <Button onClick={() => setActiveTab("home")}>Go Home</Button>
+              <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">🏥</div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Department Not Found</h3>
+                  <p className="text-gray-600 mb-4">The selected department is not available.</p>
+                  <Button onClick={() => setActiveTab("home")}>Go Back Home</Button>
+                </div>
               </div>
             );
         }
       default:
-        return renderHomePage()
+        return renderHomePage();
     }
   }
 
@@ -454,16 +456,16 @@ export default function MediNetApp() {
               <div className="relative">
                 <Button
                   variant="ghost"
-                       size="sm" 
-                       className="p-2" 
-                 onClick={() => setActiveTab("notifications")}
-        >
-                 <Bell className="w-5 h-4" />
-                 </Button>
-             <Badge className="absolute top-0 -right-1 w-5 h-5 p-0 flex items-center justify-center bg-red-500 text-xs">
-                    3
-              </Badge>
-                     </div>
+                  size="sm" 
+                  className="p-2" 
+                  onClick={() => setActiveTab("notifications")}
+                >
+                  <Bell className="w-5 h-4" />
+                </Button>
+                <Badge className="absolute top-0 -right-1 w-5 h-5 p-0 flex items-center justify-center bg-red-500 text-xs">
+                  3
+                </Badge>
+              </div>
           
               {/* Circular SOS Button */}
               <button
@@ -474,8 +476,6 @@ export default function MediNetApp() {
               </button>
             </div>
           </div>
-
-
 
           {/* Search Bar */}
           <div className="relative">
@@ -831,6 +831,35 @@ export default function MediNetApp() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Health Tips Section Card */}
+        <div className="px-4 mt-8 mb-8">
+          <div className="mb-4">
+            <h2 className="text-lg font-bold text-[#2A5CAA]">Health Tips & Wellness</h2>
+          </div>
+          
+          <Card
+            className="transform transition-all duration-200 active:scale-105 hover:shadow-md border-0 shadow-sm cursor-pointer"
+            onClick={() => setActiveTab("tips")}
+          >
+            <CardContent className="p-5 bg-gradient-to-r from-green-50 to-teal-50">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-2xl">💡</span>
+                </div>
+                <div className="flex-1">
+                  <div className="font-semibold text-gray-800">Health Tips & Wellness</div>
+                  <div className="text-sm text-gray-600 mt-1">Daily health tips, wellness articles, and expert advice</div>
+                  <div className="flex gap-2 mt-3">
+                    <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Daily Tips</div>
+                    <div className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Expert Articles</div>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-400" />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       {/* AI Floating Button - Positioned above bottom navbar */}
@@ -957,7 +986,6 @@ export default function MediNetApp() {
             { id: "home", icon: "🏠", label: "Home" },
             { id: "appointments", icon: "📅", label: "Appointments" },
             { id: "pharmacy", icon: "💊", label: "Pharmacy" },
-            { id: "tips", icon: "💡", label: "Health Tips" },
             { id: "profile", icon: "👤", label: "Profile" },
           ].map((tab) => (
             <button

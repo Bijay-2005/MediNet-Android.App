@@ -35,29 +35,29 @@ export const ProfileCard = () => {
 
   return (
     <>
-     <Card className="p-6 bg-gradient-to-br from-[#3A8DFF] via-[#B55EFF] to-[#FF5EC9] text-white shadow-md rounded-xl border-0">
-  <div className="flex items-start justify-between mb-4">
-    <div className="flex items-center gap-4">
-      <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center">
-        <User className="w-8 h-8 text-white" />
+     <Card className="p-4 bg-gradient-to-br from-[#3A8DFF] via-[#B55EFF] to-[#FF5EC9] text-white shadow-md rounded-xl border-0">
+  <div className="flex items-start justify-between mb-3">
+    <div className="flex items-center gap-3">
+      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+        <User className="w-6 h-6 text-white" />
       </div>
       <div>
-        <h2 className="text-xl font-bold">{profileData.name}</h2>
-        <p className="text-white/80">{profileData.profession}</p>
+        <h2 className="text-lg font-bold">{profileData.name}</h2>
+        <p className="text-white/80 text-sm">{profileData.profession}</p>
       </div>
     </div>
     <Button
       variant="outline"
       size="sm"
       onClick={() => setIsEditDialogOpen(true)}
-      className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+      className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-xs"
     >
-      <Edit className="w-4 h-4 mr-1" />
+      <Edit className="w-3 h-3 mr-1" />
       Edit
     </Button>
   </div>
 
-  <div className="grid grid-cols-2 gap-4 text-sm">
+  <div className="grid grid-cols-2 gap-3 text-xs">
     <div>
       <p className="text-white/70">Gender:</p>
       <p className="font-medium">{profileData.gender}</p>

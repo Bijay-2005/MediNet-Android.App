@@ -82,32 +82,32 @@ export const PatientIdCard = () => {
   return (
     <>
       <Card className="bg-gradient-to-br from-emerald-400 to-green-500 text-white border-0 shadow-soft rounded-2xl">
-        <div className="p-6">
+        <div className="p-4">
           <div className="flex items-center justify-between">
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <CreditCard className="h-5 w-5 text-white/80" />
+                <CreditCard className="h-4 w-4 text-white/80" />
                 <div>
-                  <h3 className="text-sm font-medium text-white/80">Patient ID</h3>
-                  <p className="text-lg font-bold text-white">{patientData.patientId}</p>
+                  <h3 className="text-xs font-medium text-white/80">Patient ID</h3>
+                  <p className="text-base font-bold text-white">{patientData.patientId}</p>
                 </div>
               </div>
               
               <div>
-                <p className="text-sm font-medium text-white/80">Emergency Contact:</p>
-                <p className="text-base font-semibold text-white">{patientData.emergencyContact.split(' (')[0]}</p>
-                <p className="text-sm text-white/90">{patientData.emergencyContact.match(/\(([^)]+)\)/)?.[1] || ''}</p>
+                <p className="text-xs font-medium text-white/80">Emergency Contact:</p>
+                <p className="text-sm font-semibold text-white">{patientData.emergencyContact.split(' (')[0]}</p>
+                <p className="text-xs text-white/90">{patientData.emergencyContact.match(/\(([^)]+)\)/)?.[1] || ''}</p>
               </div>
             </div>
             
-            <div className="flex flex-col items-center gap-3">
-              <div className="p-3 bg-white/20 rounded-lg">
-                <QrCode className="h-8 w-8 text-white" />
+            <div className="flex flex-col items-center gap-2">
+              <div className="p-2 bg-white/20 rounded-lg">
+                <QrCode className="h-6 w-6 text-white" />
               </div>
               <Button 
                 variant="ghost" 
                 onClick={() => setShowQrDialog(true)}
-                className="text-white/80 hover:text-white hover:bg-white/10 text-xs px-3 py-1 h-auto rounded-lg"
+                className="text-white/80 hover:text-white hover:bg-white/10 text-xs px-2 py-1 h-auto rounded-lg"
               >
                 Show QR Details
               </Button>
@@ -121,91 +121,91 @@ export const PatientIdCard = () => {
           <DialogHeader>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <QrCode className="h-5 w-5" />
-                <DialogTitle>Emergency QR Details</DialogTitle>
+                <QrCode className="h-4 w-4" />
+                <DialogTitle className="text-base">Emergency QR Details</DialogTitle>
               </div>
               {!isEditing && (
                 <Button variant="ghost" size="icon" onClick={handleEdit}>
-                  <Edit2 className="h-4 w-4" />
+                  <Edit2 className="h-3 w-3" />
                 </Button>
               )}
             </div>
           </DialogHeader>
           
           {isEditing ? (
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <Label className="text-sm font-medium">Full Name</Label>
+                  <Label className="text-xs font-medium">Full Name</Label>
                   <Input
                     value={editData.name}
                     onChange={(e) => setEditData({ ...editData, name: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 text-xs"
                   />
                 </div>
                 <div>
-                  <Label className="text-sm font-medium">Patient ID</Label>
+                  <Label className="text-xs font-medium">Patient ID</Label>
                   <Input
                     value={editData.patientId}
                     onChange={(e) => setEditData({ ...editData, patientId: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 text-xs"
                   />
                 </div>
                 <div>
-                  <Label className="text-sm font-medium">Blood Type</Label>
+                  <Label className="text-xs font-medium">Blood Type</Label>
                   <Input
                     value={editData.bloodType}
                     onChange={(e) => setEditData({ ...editData, bloodType: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 text-xs"
                   />
                 </div>
                 <div>
-                  <Label className="text-sm font-medium">Emergency Contact</Label>
+                  <Label className="text-xs font-medium">Emergency Contact</Label>
                   <Input
                     value={editData.emergencyContact}
                     onChange={(e) => setEditData({ ...editData, emergencyContact: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 text-xs"
                   />
                 </div>
                 <div>
-                  <Label className="text-sm font-medium">Date of Birth</Label>
+                  <Label className="text-xs font-medium">Date of Birth</Label>
                   <Input
                     type="date"
                     value={editData.dateOfBirth}
                     onChange={(e) => setEditData({ ...editData, dateOfBirth: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 text-xs"
                   />
                 </div>
                 <div>
-                  <Label className="text-sm font-medium">Insurance</Label>
+                  <Label className="text-xs font-medium">Insurance</Label>
                   <Input
                     value={editData.insurance}
                     onChange={(e) => setEditData({ ...editData, insurance: e.target.value })}
-                    className="mt-1"
+                    className="mt-1 text-xs"
                   />
                 </div>
               </div>
               <div>
-                <Label className="text-sm font-medium">Address</Label>
+                <Label className="text-xs font-medium">Address</Label>
                 <Input
                   value={editData.address}
                   onChange={(e) => setEditData({ ...editData, address: e.target.value })}
-                  className="mt-1"
+                  className="mt-1 text-xs"
                 />
               </div>
               <div className="flex gap-2 justify-end">
-                <Button variant="outline" onClick={handleCancel}>
+                <Button variant="outline" onClick={handleCancel} size="sm">
                   Cancel
                 </Button>
-                <Button onClick={handleSave}>
+                <Button onClick={handleSave} size="sm">
                   Save Changes
                 </Button>
               </div>
             </div>
           ) : (
             <>
-              <div className="flex flex-col items-center space-y-4">
-                <div className="w-48 h-48 bg-white p-4 rounded-lg flex items-center justify-center shadow-lg border border-gray-100">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="w-40 h-40 bg-white p-3 rounded-lg flex items-center justify-center shadow-lg border border-gray-100">
                   <div className="w-full h-full bg-gray-900 rounded grid grid-cols-8 gap-1">
                     {Array.from({ length: 64 }).map((_, i) => (
                       <div
@@ -217,16 +217,16 @@ export const PatientIdCard = () => {
                 </div>
                 
                 <div className="text-center space-y-2">
-                  <p className="text-sm font-medium">Emergency Access Code</p>
-                  <Badge variant="outline" className="font-mono text-lg px-4 py-2">
+                  <p className="text-xs font-medium">Emergency Access Code</p>
+                  <Badge variant="outline" className="font-mono text-sm px-3 py-1">
                     {patientData.patientId}
                   </Badge>
                 </div>
               </div>
               
-              <div className="bg-muted/50 p-4 rounded-lg space-y-2">
-                <h4 className="font-medium text-sm">Patient Details:</h4>
-                <div className="grid grid-cols-2 gap-2 text-xs">
+              <div className="bg-muted/50 p-3 rounded-lg space-y-2">
+                <h4 className="font-medium text-xs">Patient Details:</h4>
+                <div className="grid grid-cols-2 gap-1 text-xs">
                   <div><strong>Name:</strong> {patientData.name}</div>
                   <div><strong>Blood Type:</strong> {patientData.bloodType}</div>
                   <div><strong>DOB:</strong> {patientData.dateOfBirth}</div>
@@ -240,7 +240,7 @@ export const PatientIdCard = () => {
           
           {!isEditing && (
             <div className="flex justify-center">
-              <Button onClick={() => setShowQrDialog(false)}>
+              <Button onClick={() => setShowQrDialog(false)} size="sm">
                 Close
               </Button>
             </div>

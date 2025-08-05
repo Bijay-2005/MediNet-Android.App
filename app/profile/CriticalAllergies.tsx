@@ -59,47 +59,47 @@ export const CriticalAllergies = () => {
 
   return (
     <>
-      <Card className="p-4 shadow-soft">
-        <div className="flex items-center justify-between mb-4">
+      <Card className="p-3 shadow-soft">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <AlertTriangle className="w-5 h-5 text-destructive" />
-            <h3 className="text-lg font-semibold text-destructive">Critical Allergies</h3>
+            <AlertTriangle className="w-4 h-4 text-destructive" />
+            <h3 className="text-base font-semibold text-destructive">Critical Allergies</h3>
           </div>
           <Button 
             variant="outline" 
             size="sm" 
             onClick={() => setShowEditDialog(true)}
-            className="gap-1"
+            className="gap-1 text-xs"
           >
-            <Edit className="w-4 h-4" />
+            <Edit className="w-3 h-3" />
             Edit Allergies
           </Button>
         </div>
         
-        <div className="space-y-3">
+        <div className="space-y-2">
           {allergies.map((allergy) => (
             <div 
               key={allergy.id} 
-              className="p-3 border rounded-lg cursor-pointer hover:bg-muted/30 transition-colors"
+              className="p-2 border rounded-lg cursor-pointer hover:bg-muted/30 transition-colors"
               onClick={() => handleEditAllergy(allergy)}
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-medium">{allergy.name}</span>
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-medium text-sm">{allergy.name}</span>
                 <Badge className={`text-xs ${getSeverityColor(allergy.severity)}`}>
                   {allergy.severity}
                 </Badge>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 <span className="font-medium">Reaction:</span> {allergy.reaction}
               </p>
             </div>
           ))}
         </div>
         
-        <div className="mt-4 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+        <div className="mt-3 p-2 bg-destructive/10 border border-destructive/20 rounded-lg">
           <div className="flex items-start gap-2">
-            <AlertTriangle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-            <div className="text-sm">
+            <AlertTriangle className="w-3 h-3 text-destructive mt-0.5 flex-shrink-0" />
+            <div className="text-xs">
               <p className="font-medium text-destructive">Emergency Note:</p>
               <p className="text-destructive/80">Always inform healthcare providers about these allergies before any treatment.</p>
             </div>
@@ -110,7 +110,7 @@ export const CriticalAllergies = () => {
           variant="medical" 
           size="sm" 
           onClick={handleAddNewAllergy}
-          className="mt-3 w-full"
+          className="mt-3 w-full text-xs"
         >
           Add New Allergy
         </Button>
@@ -119,23 +119,24 @@ export const CriticalAllergies = () => {
       <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>
+            <DialogTitle className="text-base">
               {editingAllergy?.id ? 'Edit Allergy' : 'Add New Allergy'}
             </DialogTitle>
           </DialogHeader>
           {editingAllergy && (
-            <div className="space-y-4 py-4">
+            <div className="space-y-3 py-4">
               <div className="space-y-2">
-                <Label htmlFor="allergy-name">Allergy Name</Label>
+                <Label htmlFor="allergy-name" className="text-xs">Allergy Name</Label>
                 <Input
                   id="allergy-name"
                   value={editingAllergy.name}
                   onChange={(e) => setEditingAllergy({...editingAllergy, name: e.target.value})}
                   placeholder="Enter allergy name"
+                  className="text-xs"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="severity">Severity</Label>
+                <Label htmlFor="severity" className="text-xs">Severity</Label>
                 <Select value={editingAllergy.severity} onValueChange={(value: any) => setEditingAllergy({...editingAllergy, severity: value})}>
                   <SelectTrigger>
                     <SelectValue />
@@ -148,22 +149,23 @@ export const CriticalAllergies = () => {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="reaction">Reaction</Label>
+                <Label htmlFor="reaction" className="text-xs">Reaction</Label>
                 <Textarea
                   id="reaction"
                   value={editingAllergy.reaction}
                   onChange={(e) => setEditingAllergy({...editingAllergy, reaction: e.target.value})}
                   placeholder="Describe the allergic reaction"
-                  rows={3}
+                  rows={2}
+                  className="text-xs"
                 />
               </div>
             </div>
           )}
           <div className="flex justify-end gap-2">
-            <Button variant="outline" onClick={() => setShowEditDialog(false)}>
+            <Button variant="outline" onClick={() => setShowEditDialog(false)} size="sm">
               Cancel
             </Button>
-            <Button onClick={handleSaveAllergy}>
+            <Button onClick={handleSaveAllergy} size="sm">
               Save Allergy
             </Button>
           </div>
