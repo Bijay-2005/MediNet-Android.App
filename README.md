@@ -1,4 +1,4 @@
-# 🏥 HealthCare+ - Comprehensive Healthcare Management Platform
+# 🏥 MediNet+ - Comprehensive Healthcare Management Platform
 
 A scalable, secure, and real-time enabled full-stack healthcare management system built for modern medical institutions and healthcare providers. Designed with complete patient management, appointment scheduling, and role-based access, the platform empowers patients, healthcare providers, and administrators with a seamless healthcare experience. It supports everything from patient registration and appointment booking to pharmacy management, lab tests, blood bank services, and live consultations, all deployable via a Dockerized, cloud-native setup.
 
