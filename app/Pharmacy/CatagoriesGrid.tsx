@@ -15,14 +15,15 @@ import { cn } from "@/lib/utils"
 import { useState } from "react"
 import AllCategoriesPage from "./all-categories"
 
+
 const categories = [
   { 
-    name: "Must Haves", 
+    name: "First Aid", 
     icon: Pill, 
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Essential medicines and products",
-    image: "💊"
+    image: "https://sc04.alicdn.com/kf/He2f1dc768fa74c5faaa0bf0334cc871fg/200146776/He2f1dc768fa74c5faaa0bf0334cc871fg.jpg"
   },
   { 
     name: "Diabetes Essentials", 
@@ -30,7 +31,7 @@ const categories = [
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Diabetes care products",
-    image: "💊"
+    image: "https://www.japantimes.co.jp/uploads/imported_images/uploads/2023/05/np_file_226441.jpeg"
   },
   { 
     name: "Vitamins & Supplements", 
@@ -38,15 +39,15 @@ const categories = [
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Vitamins and health supplements",
-    image: "💊"
+    image: "https://domf5oio6qrcr.cloudfront.net/media/content/images/Vitaminsdreamstime_m_34701589.jpg"
   },
   { 
-    name: "Monsoon Store", 
+    name: "Eye Care", 
     icon: Thermometer, 
     color: "text-gray-700", 
     bgColor: "bg-white",
-    description: "Seasonal health products",
-    image: "💊"
+    description: "Eye care products",
+    image: "https://i5.walmartimages.com/asr/bd8583b8-d726-46c5-b2cd-0e0940214403_1.8bbf427cdf7e3abb2600a3379d8bbbd9.jpeg"
   },
   { 
     name: "Heart Care", 
@@ -54,7 +55,7 @@ const categories = [
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Cardiovascular health products",
-    image: "💊"
+    image: "https://www.southtees.nhs.uk/wp-content/uploads/2022/02/common-medicines-2048x1024.jpg"
   },
   { 
     name: "Ayurvedic Care", 
@@ -62,7 +63,7 @@ const categories = [
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Traditional Ayurvedic medicines",
-    image: "💊"
+    image: "https://thomasprocessing.com/wp-content/uploads/2022/06/Herbal-medicine-Leaves-bottles-and-pills.jpg"
   },
   { 
     name: "Sports Nutrition", 
@@ -70,7 +71,7 @@ const categories = [
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Sports and fitness supplements",
-    image: "💊"
+    image: "https://cdn.shopify.com/s/files/1/0009/1943/7372/t/16/assets/Sports-Nutrition-banner.jpg"
   },
   { 
     name: "Skin Care", 
@@ -78,9 +79,10 @@ const categories = [
     color: "text-gray-700", 
     bgColor: "bg-white",
     description: "Skincare and beauty products",
-    image: "💊"
+    image: "https://img.freepik.com/premium-photo/natural-herbal-skincare-products-ingredients-from-top-view_235573-9607.jpg"
   }
 ]
+
 
 export function CategoriesGrid() {
   const [showAllCategories, setShowAllCategories] = useState(false)
@@ -97,7 +99,7 @@ export function CategoriesGrid() {
   return (
     <div className="space-y-4 sm:space-y-6 animate-fade-in delay-200">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl sm:text-2xl font-bold">Shop by Category</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-orange-600">Shop by Category</h2>
       </div>
       
       {/* Main 6 Categories - 2 rows of 3 */}
@@ -105,17 +107,29 @@ export function CategoriesGrid() {
         {mainCategories.map((category, index) => (
           <Card 
             key={category.name}
-            className={cn(
-              "group cursor-pointer hover:shadow-lg transition-all duration-300",
-              "animate-fade-in flex flex-col",
-              "border border-gray-200 shadow-sm hover:shadow-md bg-white"
-            )}
+            className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 animate-fade-in border-orange-200 hover:border-orange-400 bg-gradient-to-br from-white to-orange-50"
             style={{ animationDelay: `${200 + index * 50}ms` }}
           >
             <CardContent className="p-2 sm:p-3 flex flex-col items-center justify-center">
-              {/* Image Placeholder - Sharp corners and full width */}
-              <div className="w-full h-20 sm:h-24 bg-gray-100 flex items-center justify-center mb-2 sm:mb-3 group-hover:bg-gray-50 transition-colors duration-300">
-                <span className="text-2xl sm:text-3xl">{category.image}</span>
+              {/* Category Image */}
+              <div className="w-full h-20 sm:h-24 bg-orange-100 flex items-center justify-center mb-2 sm:mb-3 group-hover:bg-orange-200 transition-colors duration-200 overflow-hidden">
+                <img 
+                  src={category.image} 
+                  alt={category.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to icon if image fails to load
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) {
+                      fallback.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div className="hidden items-center justify-center w-full h-full">
+                  <category.icon className="w-8 h-8 text-orange-600" />
+                </div>
               </div>
               
               {/* Category Name */}

@@ -9,6 +9,7 @@ import { LocationModal } from "./LocationModal";
 import { CartSheet } from "./CartSheet";
 import { SidebarSheet } from "./SidebarSheet";
 import { AdvertiseCard } from "./advertisecard";
+
 import { ArrowLeft, ShoppingCart, MapPin, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -46,6 +47,8 @@ const Index = () => {
     console.log("Proceeding to checkout with items:", cartItems);
     console.log("Total amount:", getTotalAmount() + 2.99); // Including delivery fee
   };
+
+
   return <div className="min-h-screen bg-background">
       <main className="flex-1 overflow-auto">
         {/* Header */}
@@ -71,8 +74,8 @@ const Index = () => {
               </Button>
             </div>
             
-            <div className="ml-auto flex items-center gap-1 sm:gap-2">
-              {/* Cart */}
+                         <div className="ml-auto flex items-center gap-1 sm:gap-2">
+               {/* Cart */}
               <CartSheet cartItems={cartItems} onUpdateQuantity={updateQuantity} onRemoveItem={removeItem} onCheckout={handleCheckout}>
                 <Button variant="ghost" size="sm" className="gap-1 sm:gap-2 relative h-9 sm:h-10 hover:bg-white/20 transition-all duration-200 hover:scale-105 text-white">
                   <ShoppingCart className="h-4 w-4 text-white" />
@@ -102,23 +105,23 @@ const Index = () => {
             </h1>
           </div>
 
-          {/* Promotional Banner Carousel */}
-          <PromotionalBannerCarousel />
+           {/* Promotional Banner Carousel */}
+           <PromotionalBannerCarousel />
 
-          {/* Search Section */}
-          <SearchSection />
+           {/* Search Section */}
+           <SearchSection />
 
-          {/* Upload Prescription */}
-          <UploadPrescription />
+                     {/* Upload Prescription */}
+           <UploadPrescription />
 
-          {/* Categories Grid */}
-          <CategoriesGrid />
+           {/* Categories Grid */}
+           <CategoriesGrid />
 
-          {/* Medicine Grid */}
-          <MedicineGrid onAddToCart={handleAddToCart} />
+           {/* Medicine Grid */}
+           <MedicineGrid onAddToCart={handleAddToCart} />
 
-          {/* Quick Actions */}
-          <QuickActions />
+           {/* Quick Actions */}
+           <QuickActions />
 
           {/* Footer */}
           <footer className="mt-8 sm:mt-12 lg:mt-16 py-6 sm:py-8 pb-20 sm:pb-8 border-t text-center text-sm text-muted-foreground">

@@ -9,94 +9,79 @@ import { cn } from "@/lib/utils"
 
 const categories = [
   { 
-    name: "Must Haves", 
-    description: "Diabetic Care, Vitamin, F...",
-    bgColor: "bg-pink-50",
-    image: "💊"
+    name: "First Aid", 
+    description: "Essential medicines and products",
+    image: "https://sc04.alicdn.com/kf/He2f1dc768fa74c5faaa0bf0334cc871fg/200146776/He2f1dc768fa74c5faaa0bf0334cc871fg.jpg"
   },
   { 
     name: "Diabetes Essentials", 
-    description: "Diabetic Care OTC",
-    bgColor: "bg-pink-50",
-    image: "💊"
+    description: "Diabetes care products",
+    image: "https://www.japantimes.co.jp/uploads/imported_images/uploads/2023/05/np_file_226441.jpeg"
   },
   { 
     name: "Vitamins & Supplements", 
-    description: "Vitamins and Supplement...",
-    bgColor: "bg-yellow-50",
-    image: "💊"
+    description: "Vitamins and health supplements",
+    image: "https://domf5oio6qrcr.cloudfront.net/media/content/images/Vitaminsdreamstime_m_34701589.jpg"
   },
   { 
-    name: "Monsoon Store", 
-    description: "Immunity & Fever Care, ...",
-    bgColor: "bg-green-50",
-    image: "💊"
+    name: "Eye Care", 
+    description: "Eye care products",
+    image: "https://i5.walmartimages.com/asr/bd8583b8-d726-46c5-b2cd-0e0940214403_1.8bbf427cdf7e3abb2600a3379d8bbbd9.jpeg"
   },
   { 
     name: "Heart Care", 
-    description: "Heart Store",
-    bgColor: "bg-blue-50",
-    image: "💊"
+    description: "Cardiovascular health products",
+    image: "https://www.southtees.nhs.uk/wp-content/uploads/2022/02/common-medicines-2048x1024.jpg"
   },
   { 
     name: "Ayurvedic Care", 
-    description: "Ayurvedic Medicines, Ay...",
-    bgColor: "bg-pink-50",
-    image: "💊"
+    description: "Traditional Ayurvedic medicines",
+    image: "https://thomasprocessing.com/wp-content/uploads/2022/06/Herbal-medicine-Leaves-bottles-and-pills.jpg"
   },
   { 
     name: "Sports Nutrition", 
-    description: "Sports Nutrition",
-    bgColor: "bg-pink-50",
-    image: "💊"
+    description: "Sports and fitness supplements",
+    image: "https://cdn.shopify.com/s/files/1/0009/1943/7372/t/16/assets/Sports-Nutrition-banner.jpg"
   },
   { 
     name: "Skin Care", 
-    description: "Skin Care, Anti Acne Topi...",
-    bgColor: "bg-yellow-50",
-    image: "💊"
+    description: "Skincare and beauty products",
+    image: "https://img.freepik.com/premium-photo/natural-herbal-skincare-products-ingredients-from-top-view_235573-9607.jpg"
   },
   { 
     name: "Mobility & Elderly Care", 
-    description: "Urinary Support And Car...",
-    bgColor: "bg-green-50",
-    image: "💊"
+    description: "Urinary Support And Care",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop"
   },
   { 
     name: "Health Food and Drinks", 
-    description: "Shop By Category, Snack...",
-    bgColor: "bg-blue-50",
-    image: "💊"
+    description: "Shop By Category, Snacks",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop"
   },
   { 
     name: "Mother and Baby Care", 
-    description: "Baby Hygiene, Baby Foo...",
-    bgColor: "bg-pink-50",
-    image: "💊"
+    description: "Baby Hygiene, Baby Food",
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300&h=200&fit=crop"
   },
   { 
     name: "Personal Care", 
-    description: "Hair Care, Men Care, Ap...",
-    bgColor: "bg-yellow-50",
-    image: "💊"
+    description: "Hair Care, Men Care, Apparel",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop"
   },
   { 
     name: "Sexual Wellness", 
     description: "Sexual Wellness",
-    bgColor: "bg-green-50",
-    image: "💊"
+    image: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=300&h=200&fit=crop"
   },
   { 
     name: "Health Concerns", 
-    description: "Stomach Care, Skin Care,...",
-    bgColor: "bg-blue-50",
-    image: "💊"
+    description: "Stomach Care, Skin Care",
+    image: "https://images.unsplash.com/photo-1559757196-4b3f5c5b7e3a?w=300&h=200&fit=crop"
   },
   { 
     name: "Healthcare Devices", 
-    description: "Glucometer & Strips, BP ...",
-    bgColor: "bg-pink-50",
-    image: "💊"
+    description: "Glucometer & Strips, BP Monitor",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop"
   }
 ]
 
@@ -155,18 +140,30 @@ export default function AllCategoriesPage({ onBack }: AllCategoriesPageProps) {
           {categories.map((category, index) => (
             <Card 
               key={category.name}
-              className={cn(
-                "group cursor-pointer hover:shadow-lg transition-all duration-300",
-                "animate-fade-in flex flex-col",
-                "border border-gray-200 shadow-sm hover:shadow-md bg-white"
-              )}
+              className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-105 animate-fade-in border-orange-200 hover:border-orange-400 bg-gradient-to-br from-white to-orange-50"
               style={{ animationDelay: `${200 + index * 50}ms` }}
               onClick={() => handleCategoryClick(category.name)}
             >
               <CardContent className="p-2 sm:p-3 flex flex-col items-center justify-center">
-                {/* Image Placeholder - Sharp corners and full width */}
-                <div className="w-full h-20 sm:h-24 bg-gray-100 flex items-center justify-center mb-2 sm:mb-3 group-hover:bg-gray-50 transition-colors duration-300">
-                  <span className="text-2xl sm:text-3xl">{category.image}</span>
+                {/* Category Image */}
+                <div className="w-full h-20 sm:h-24 bg-orange-100 flex items-center justify-center mb-2 sm:mb-3 group-hover:bg-orange-200 transition-colors duration-200 overflow-hidden">
+                  <img 
+                    src={category.image} 
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to pill icon if image fails to load
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      const nextSibling = target.nextElementSibling as HTMLElement;
+                      if (nextSibling) {
+                        nextSibling.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  <div className="hidden items-center justify-center w-full h-full">
+                    <span className="text-2xl sm:text-3xl">💊</span>
+                  </div>
                 </div>
                 
                 {/* Category Name */}

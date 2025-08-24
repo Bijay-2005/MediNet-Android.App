@@ -1,261 +1,197 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ChevronDown, Receipt, TestTube, FileText, Download, Eye, Plus, Calendar, DollarSign, User, Stethoscope } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { LogoutButton } from '../auth';
 import { useState } from "react";
 
 export const NavigationSections = () => {
   const { toast } = useToast();
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
 
-  const toggleSection = (sectionId: string) => {
-    setExpandedSections(prev => 
-      prev.includes(sectionId) 
-        ? prev.filter(id => id !== sectionId)
-        : [...prev, sectionId]
-    );
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
+
+  const toggleSection = (section: string) => {
+    setExpandedSection(expandedSection === section ? null : section);
   };
-
-  const hospitalBills = [
-    {
-      id: 1,
-      hospital: "City Medical Center",
-      date: "Jan 15, 2024",
-      amount: "$1,250.00",
-      status: "Paid",
-      services: ["Consultation", "Blood Tests", "X-Ray"]
-    },
-    {
-      id: 2,
-      hospital: "Heart Care Clinic",
-      date: "Jan 08, 2024",
-      amount: "$890.00",
-      status: "Pending",
-      services: ["ECG", "Consultation", "Medication"]
-    }
-  ];
-
-  const labResults = [
-    {
-      id: 1,
-      test: "Complete Blood Count",
-      date: "Jan 20, 2024",
-      doctor: "Dr. Sarah Wilson",
-      status: "Normal",
-      description: "All values within normal range"
-    },
-    {
-      id: 2,
-      test: "Lipid Panel",
-      date: "Jan 18, 2024",
-      doctor: "Dr. Michael Chen",
-      status: "Attention Required",
-      description: "Cholesterol levels slightly elevated"
-    }
-  ];
-
-  const doctorNotes = [
-    {
-      id: 1,
-      doctor: "Dr. Sarah Wilson",
-      specialty: "Cardiology",
-      date: "Jan 22, 2024",
-      diagnosis: "Hypertension - Well controlled",
-      notes: "Patient shows improvement in blood pressure management. Continue current medication."
-    },
-    {
-      id: 2,
-      doctor: "Dr. Emily Rodriguez",
-      specialty: "Endocrinology",
-      date: "Jan 15, 2024",
-      diagnosis: "Type 2 Diabetes - Stable",
-      notes: "Diabetes management is stable. HbA1c levels improved."
-    }
-  ];
 
   return (
     <div className="space-y-3">
-      {/* Hospital Bills Section */}
+      {/* Medical Records Section */}
       <Card className="bg-background border shadow-sm">
-        <div 
-          className="p-3 cursor-pointer flex items-center justify-between hover:bg-muted/50 transition-colors"
-          onClick={() => toggleSection('bills')}
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Receipt className="w-4 h-4 text-primary" />
+        <div className="p-3">
+          <Button
+            variant="ghost"
+            className="w-full justify-between h-12 text-base font-medium"
+            onClick={() => toggleSection('medical')}
+          >
+            <div className="flex items-center gap-3">
+              <FileText className="w-5 h-5" />
+              Medical Records
             </div>
-            <h3 className="font-semibold text-base">Hospital Bills</h3>
-          </div>
-          <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.includes('bills') ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSection === 'medical' ? 'rotate-180' : ''}`} />
+          </Button>
+          {expandedSection === 'medical' && (
+            <div className="mt-3 space-y-2">
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Eye className="w-4 h-4" />
+                View Records
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Download className="w-4 h-4" />
+                Download Records
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Plus className="w-4 h-4" />
+                Add New Record
+              </Button>
+            </div>
+          )}
         </div>
-        
-        {expandedSections.includes('bills') && (
-          <div className="px-3 pb-3 space-y-2">
-            {hospitalBills.map((bill) => (
-              <Card key={bill.id} className="p-3 bg-muted/30">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <h4 className="font-medium text-sm">{bill.hospital}</h4>
-                    <Badge variant={bill.status === 'Paid' ? 'default' : 'secondary'} className="mt-1 text-xs">
-                      {bill.status}
-                    </Badge>
-                  </div>
-                  <Button variant="outline" size="sm" className="gap-1 text-xs">
-                    <Download className="w-3 h-3" />
-                    Download PDF
-                  </Button>
-                </div>
-                
-                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {bill.date}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <DollarSign className="w-3 h-3" />
-                    {bill.amount}
-                  </div>
-                </div>
-                
-                <div>
-                  <p className="text-xs font-medium mb-1">Services:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {bill.services.map((service, idx) => (
-                      <span key={idx} className="text-xs bg-background px-2 py-1 rounded">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            ))}
-            
-            <Button variant="outline" className="w-full gap-1 mt-3 text-xs">
-              <Plus className="w-3 h-3" />
-              Add Bill
-            </Button>
-          </div>
-        )}
       </Card>
 
-      {/* Lab Test Results Section */}
+      {/* Lab Results Section */}
       <Card className="bg-background border shadow-sm">
-        <div 
-          className="p-3 cursor-pointer flex items-center justify-between hover:bg-muted/50 transition-colors"
-          onClick={() => toggleSection('lab')}
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <TestTube className="w-4 h-4 text-primary" />
+        <div className="p-3">
+          <Button
+            variant="ghost"
+            className="w-full justify-between h-12 text-base font-medium"
+            onClick={() => toggleSection('lab')}
+          >
+            <div className="flex items-center gap-3">
+              <TestTube className="w-5 h-5" />
+              Lab Results
             </div>
-            <h3 className="font-semibold text-base">Lab Test Results</h3>
-          </div>
-          <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.includes('lab') ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSection === 'lab' ? 'rotate-180' : ''}`} />
+          </Button>
+          {expandedSection === 'lab' && (
+            <div className="mt-3 space-y-2">
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Eye className="w-4 h-4" />
+                View Results
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Download className="w-4 h-4" />
+                Download Results
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Calendar className="w-4 h-4" />
+                Schedule Test
+              </Button>
+            </div>
+          )}
         </div>
-        
-        {expandedSections.includes('lab') && (
-          <div className="px-3 pb-3 space-y-2">
-            {labResults.map((result) => (
-              <Card key={result.id} className="p-3 bg-muted/30">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <h4 className="font-medium text-sm">{result.test}</h4>
-                    <Badge 
-                      variant={result.status === 'Normal' ? 'default' : 'destructive'} 
-                      className="mt-1 text-xs"
-                    >
-                      {result.status}
-                    </Badge>
-                  </div>
-                  <Button variant="outline" size="sm" className="gap-1 text-xs">
-                    <Eye className="w-3 h-3" />
-                    View Report
-                  </Button>
-                </div>
-                
-                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {result.date}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <User className="w-3 h-3" />
-                    {result.doctor}
-                  </div>
-                </div>
-                
-                <p className="text-xs">{result.description}</p>
-              </Card>
-            ))}
-            
-            <Button variant="outline" className="w-full gap-1 mt-3 text-xs">
-              <Plus className="w-3 h-3" />
-              Add Test Result
-            </Button>
-          </div>
-        )}
       </Card>
 
-      {/* Doctor Visit Notes Section */}
+      {/* Billing Section */}
       <Card className="bg-background border shadow-sm">
-        <div 
-          className="p-3 cursor-pointer flex items-center justify-between hover:bg-muted/50 transition-colors"
-          onClick={() => toggleSection('notes')}
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <FileText className="w-4 h-4 text-primary" />
+        <div className="p-3">
+          <Button
+            variant="ghost"
+            className="w-full justify-between h-12 text-base font-medium"
+            onClick={() => toggleSection('billing')}
+          >
+            <div className="flex items-center gap-3">
+              <Receipt className="w-5 h-5" />
+              Billing & Payments
             </div>
-            <h3 className="font-semibold text-base">Doctor Visit Notes</h3>
-          </div>
-          <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.includes('notes') ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSection === 'billing' ? 'rotate-180' : ''}`} />
+          </Button>
+          {expandedSection === 'billing' && (
+            <div className="mt-3 space-y-2">
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Receipt className="w-4 h-4" />
+                View Bills
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <DollarSign className="w-4 h-4" />
+                Make Payment
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Download className="w-4 h-4" />
+                Download Invoice
+              </Button>
+            </div>
+          )}
         </div>
-        
-        {expandedSections.includes('notes') && (
-          <div className="px-3 pb-3 space-y-2">
-            {doctorNotes.map((note) => (
-              <Card key={note.id} className="p-3 bg-muted/30">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <h4 className="font-medium text-sm">{note.doctor}</h4>
-                    <span className="text-xs text-primary">{note.specialty}</span>
-                  </div>
-                  <Button variant="outline" size="sm" className="gap-1 text-xs">
-                    <Eye className="w-3 h-3" />
-                    Full Notes
-                  </Button>
-                </div>
-                
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                  <Calendar className="w-3 h-3" />
-                  {note.date}
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Stethoscope className="w-3 h-3 text-primary" />
-                    <div>
-                      <p className="text-xs font-medium">Diagnosis:</p>
-                      <p className="text-xs">{note.diagnosis}</p>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <p className="text-xs font-medium">Notes:</p>
-                    <p className="text-xs text-muted-foreground">{note.notes}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-            
-            <Button variant="outline" className="w-full gap-1 mt-3 text-xs">
-              <Plus className="w-3 h-3" />
-              Add Visit Note
-            </Button>
-          </div>
-        )}
+      </Card>
+
+      {/* Appointments Section */}
+      <Card className="bg-background border shadow-sm">
+        <div className="p-3">
+          <Button
+            variant="ghost"
+            className="w-full justify-between h-12 text-base font-medium"
+            onClick={() => toggleSection('appointments')}
+          >
+            <div className="flex items-center gap-3">
+              <Calendar className="w-5 h-5" />
+              Appointments
+            </div>
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSection === 'appointments' ? 'rotate-180' : ''}`} />
+          </Button>
+          {expandedSection === 'appointments' && (
+            <div className="mt-3 space-y-2">
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Calendar className="w-4 h-4" />
+                View Appointments
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Plus className="w-4 h-4" />
+                Schedule New
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Stethoscope className="w-4 h-4" />
+                Find Doctor
+              </Button>
+            </div>
+          )}
+        </div>
+      </Card>
+
+      {/* Account Settings Section */}
+      <Card className="bg-background border shadow-sm">
+        <div className="p-3">
+          <Button
+            variant="ghost"
+            className="w-full justify-between h-12 text-base font-medium"
+            onClick={() => toggleSection('account')}
+          >
+            <div className="flex items-center gap-3">
+              <User className="w-5 h-5" />
+              Account Settings
+            </div>
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSection === 'account' ? 'rotate-180' : ''}`} />
+          </Button>
+          {expandedSection === 'account' && (
+            <div className="mt-3 space-y-2">
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <User className="w-4 h-4" />
+                Edit Profile
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Eye className="w-4 h-4" />
+                Privacy Settings
+              </Button>
+              <Button variant="ghost" className="w-full justify-start gap-3 h-10">
+                <Download className="w-4 h-4" />
+                Export Data
+              </Button>
+            </div>
+          )}
+        </div>
+      </Card>
+
+      {/* Logout Section */}
+      <Card className="bg-background border shadow-sm">
+        <div className="p-3">
+          <LogoutButton
+            variant="destructive"
+            className="w-full gap-2 h-12 text-base font-medium"
+            showIcon={true}
+          >
+            Sign Out
+          </LogoutButton>
+        </div>
       </Card>
     </div>
   );

@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import LoadingScreen from "./LoadingScreen"
 
 // Import page components
-import LoginPage from "./routes/login-page"
+import { AuthProvider, useAuth } from "./routes/auth-context"
 import AppointmentsPage from "./pages/appointments-page"
 import PharmacyPage from "./Pharmacy/pharmacy-page"
 import HealthTipsPage from "./pages/health-tips-page"
@@ -36,11 +36,13 @@ import UrologyPage from "./Doctors-departmnet-page/Urology/Urologypage";
 import OncologyPage from "./Doctors-departmnet-page/Oncology/Oncologypage";
 import ScheduleAppointmentPage from "./Doctors-departmnet-page/cardiology/schedule/[id]/schedule";
 import MapComponent from './routes/MapComponent';
+import { AuthPage } from './auth'
+import { LogoutButton } from './auth'
 
     
-export default function MediNetApp() {
+function MediNetAppContent() {
   const [isLoading, setIsLoading] = useState(true)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { isAuthenticated, user, logout, loading: authLoading } = useAuth()
   const [activeTab, setActiveTab] = useState("home")
   const [showLocationMap, setShowLocationMap] = useState(false)
   const [selectedLocation, setSelectedLocation] = useState("Select Location")
@@ -58,6 +60,11 @@ export default function MediNetApp() {
   const totalMainAds = 3
   const totalInsuranceCards = 5
   const [selectedDepartment, setSelectedDepartment] = useState<string | null>(null);
+
+  // Debug logging for authentication state
+  useEffect(() => {
+    console.log('MediNetAppContent: Auth state changed - isAuthenticated:', isAuthenticated, 'user:', user, 'authLoading:', authLoading);
+  }, [isAuthenticated, user, authLoading]);
 
   // Loading screen effect
   useEffect(() => {
@@ -194,11 +201,14 @@ export default function MediNetApp() {
   ]
 
   const handleLogin = () => {
-    setIsLoggedIn(true)
+    // Login is handled by the auth context
+    // The authentication state will automatically update
+    // and the main app will be displayed
+    console.log('MediNetAppContent: Login successful, redirecting to main app...');
   }
 
   const handleSignOut = () => {
-    setIsLoggedIn(false)
+    logout()
     setActiveTab("home") // Reset to home tab
   }
 
@@ -208,14 +218,17 @@ export default function MediNetApp() {
   }
 
   // Show loading screen
-  if (isLoading) {
+  if (isLoading || authLoading) {
     return <LoadingScreen />
   }
 
   // Show login page if not logged in
-  if (!isLoggedIn) {
-    return <LoginPage onLogin={handleLogin} />
+  if (!isAuthenticated) {
+    console.log('MediNetAppContent: User not authenticated, showing login page');
+    return <AuthPage onLoginSuccess={() => console.log('Login successful!')} />
   }
+
+  console.log('MediNetAppContent: User authenticated, showing main app with user:', user);
 
   // Render different pages based on active tab
   const renderPage = () => {
@@ -482,6 +495,23 @@ export default function MediNetApp() {
             <Input placeholder="Search services, doctors, health topics..." className="pr-10" />
             <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
           </div>
+          
+          {/* Welcome Message */}
+          {user && (
+            <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg">
+              <div className="flex items-center gap-2">
+                <span className="text-green-600">👋</span>
+                <div>
+                  <p className="text-sm font-medium text-green-800">
+                    Welcome back, {user.name}!
+                  </p>
+                  <p className="text-xs text-green-600">
+                    Ready to take care of your health today?
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -1002,5 +1032,13 @@ export default function MediNetApp() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function MediNetApp() {
+  return (
+    <AuthProvider>
+      <MediNetAppContent />
+    </AuthProvider>
   )
 }
