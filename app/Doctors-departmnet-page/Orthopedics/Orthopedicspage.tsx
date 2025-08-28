@@ -32,7 +32,7 @@ export default function OrthopedicsPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 97,
       patientCount: 2000,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.R4CpmfxUWcpbqs5dmE-OfAHaFh?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function OrthopedicsPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 94,
       patientCount: 1500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.EQW4BjGylgtJlG6bEKEX8gAAAA?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function OrthopedicsPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 95,
       patientCount: 1800,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.4Fg3Ms-ezQLq8ab5OQMgPQHaFC?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function OrthopedicsPage({
       visitDoctorAvailability: "Available Today",
       rating: 92,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.5wYINONryurMBrOcVmTWbAHaFc?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function OrthopedicsPage({
       visitDoctorAvailability: "Not available",
       rating: 96,
       patientCount: 2500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.08Vv5JJ8fQ-jGfEJVMki1wHaE7?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function OrthopedicsPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 93,
       patientCount: 1100,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.Z-xXRuyyuutBTVf1QzbpFQHaJQ?pid=Api&P=0&h=180",
     },
   ]
 

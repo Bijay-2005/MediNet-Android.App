@@ -9,79 +9,94 @@ import { cn } from "@/lib/utils"
 
 const categories = [
   { 
-    name: "First Aid", 
-    description: "Essential medicines and products",
-    image: "https://sc04.alicdn.com/kf/He2f1dc768fa74c5faaa0bf0334cc871fg/200146776/He2f1dc768fa74c5faaa0bf0334cc871fg.jpg"
+    name: "Must Haves", 
+    description: "Diabetic Care, Vitamin, F...",
+    bgColor: "bg-pink-50",
+    image: "https://tse3.mm.bing.net/th/id/OIP.Zpf9FJCmrIpEDG2kkQlnDwHaE8?pid=Api&P=0&h=180"
   },
   { 
     name: "Diabetes Essentials", 
-    description: "Diabetes care products",
-    image: "https://www.japantimes.co.jp/uploads/imported_images/uploads/2023/05/np_file_226441.jpeg"
+    description: "Diabetic Care OTC",
+    bgColor: "bg-pink-50",
+    image: "https://tse2.mm.bing.net/th/id/OIP.T3ITFvT_4G9xup7JncZXigHaEK?pid=Api&P=0&h=180"
   },
   { 
     name: "Vitamins & Supplements", 
-    description: "Vitamins and health supplements",
-    image: "https://domf5oio6qrcr.cloudfront.net/media/content/images/Vitaminsdreamstime_m_34701589.jpg"
+    description: "Vitamins and Supplement...",
+    bgColor: "bg-yellow-50",
+    image: "https://tse3.mm.bing.net/th/id/OIP.14_1AGkgaAQLba5oOukBVAHaEK?pid=Api&P=0&h=180"
   },
   { 
-    name: "Eye Care", 
-    description: "Eye care products",
-    image: "https://i5.walmartimages.com/asr/bd8583b8-d726-46c5-b2cd-0e0940214403_1.8bbf427cdf7e3abb2600a3379d8bbbd9.jpeg"
+    name: "Monsoon Store", 
+    description: "Immunity & Fever Care, ...",
+    bgColor: "bg-green-50",
+    image: "💊"
   },
   { 
     name: "Heart Care", 
-    description: "Cardiovascular health products",
-    image: "https://www.southtees.nhs.uk/wp-content/uploads/2022/02/common-medicines-2048x1024.jpg"
+    description: "Heart Store",
+    bgColor: "bg-blue-50",
+    image: "https://tse3.mm.bing.net/th/id/OIP.-SmpRM4pJ3BFtGe9AaAioAHaE8?pid=Api&P=0&h=180"
   },
   { 
     name: "Ayurvedic Care", 
-    description: "Traditional Ayurvedic medicines",
-    image: "https://thomasprocessing.com/wp-content/uploads/2022/06/Herbal-medicine-Leaves-bottles-and-pills.jpg"
+    description: "Ayurvedic Medicines, Ay...",
+    bgColor: "bg-pink-50",
+    image: "https://tse1.mm.bing.net/th/id/OIP.8mdwIdKR9qtwFH3lPxmGWwHaFe?pid=Api&P=0&h=180"
   },
   { 
     name: "Sports Nutrition", 
-    description: "Sports and fitness supplements",
-    image: "https://cdn.shopify.com/s/files/1/0009/1943/7372/t/16/assets/Sports-Nutrition-banner.jpg"
+    description: "Sports Nutrition",
+    bgColor: "bg-pink-50",
+    image: "https://tse2.mm.bing.net/th/id/OIP.PQ4Xty_v6bFT0MnS7ysgigHaE8?pid=Api&P=0&h=180"
   },
   { 
     name: "Skin Care", 
-    description: "Skincare and beauty products",
-    image: "https://img.freepik.com/premium-photo/natural-herbal-skincare-products-ingredients-from-top-view_235573-9607.jpg"
+    description: "Skin Care, Anti Acne Topi...",
+    bgColor: "bg-yellow-50",
+    image: "https://tse3.mm.bing.net/th/id/OIP.FnueOmZQ5bMRMa4z1vFD4QHaFj?pid=Api&P=0&h=180"
   },
   { 
     name: "Mobility & Elderly Care", 
-    description: "Urinary Support And Care",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop"
+    description: "Urinary Support And Car...",
+    bgColor: "bg-green-50",
+    image: "https://tse2.mm.bing.net/th/id/OIP.ehtOhjpT1RSvOqXxSk-4GQHaDY?pid=Api&P=0&h=180"
   },
   { 
     name: "Health Food and Drinks", 
-    description: "Shop By Category, Snacks",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop"
+    description: "Shop By Category, Snack...",
+    bgColor: "bg-blue-50",
+    image: "https://tse2.mm.bing.net/th/id/OIP.PnkF0lP_5x8T_PPjlT796AHaE8?pid=Api&P=0&h=180"
   },
   { 
     name: "Mother and Baby Care", 
-    description: "Baby Hygiene, Baby Food",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300&h=200&fit=crop"
+    description: "Baby Hygiene, Baby Foo...",
+    bgColor: "bg-pink-50",
+    image: "https://tse2.mm.bing.net/th/id/OIP.L4WvNocuwu3kz-drfxhcMwHaDV?pid=Api&P=0&h=180"
   },
   { 
     name: "Personal Care", 
-    description: "Hair Care, Men Care, Apparel",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop"
+    description: "Hair Care, Men Care, Ap...",
+    bgColor: "bg-yellow-50",
+    image:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthf.bing.com%2Fth%2Fid%2FOIP.cQtl6cQg8mtZ0yYyDwOoDgHaEK%3Fr%3D0%26cb%3Dthfc1%26pid%3DApi&f=1&ipt=3b04950886fb115cf5e763b8e91b5d663ca0a1b3a4512dab0ae0ae21c4185214&ipo=images"
   },
   { 
     name: "Sexual Wellness", 
     description: "Sexual Wellness",
-    image: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=300&h=200&fit=crop"
+    bgColor: "bg-green-50",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.timZqLe733pWMzZTWf4MlAHaFE%3Fpid%3DApi&f=1&ipt=484d5ecacf2701efff0a8219fb7de8763f088bac05df46cf4ccd4f7f0cbf0bcf&ipo=images"
   },
   { 
     name: "Health Concerns", 
-    description: "Stomach Care, Skin Care",
-    image: "https://images.unsplash.com/photo-1559757196-4b3f5c5b7e3a?w=300&h=200&fit=crop"
+    description: "Stomach Care, Skin Care,...",
+    bgColor: "bg-blue-50",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.ibvK3XHn4dYmIOX_pt1fDAHaD8%3Fr%3D0%26pid%3DApi&f=1&ipt=adc8785d953d6bafa9bfc2c9f6aa68c5da83c5a53e8f57df0a5cbd2aab3f7e71&ipo=images"
   },
   { 
     name: "Healthcare Devices", 
-    description: "Glucometer & Strips, BP Monitor",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop"
+    description: "Glucometer & Strips, BP ...",
+    bgColor: "bg-pink-50",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.kyGG3VZqmgU__MzxZdCoeQHaEY%3Fpid%3DApi&f=1&ipt=fb941e3c482d895e475f7a845153c456c4acc65a1243a7d4402797aead876370&ipo=images"
   }
 ]
 

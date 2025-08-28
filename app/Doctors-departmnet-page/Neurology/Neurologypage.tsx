@@ -32,7 +32,7 @@ export default function NeurologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 95,
       patientCount: 800,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.LEB5K8CmmB7Atsn1g8MQGAHaHa?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function NeurologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 92,
       patientCount: 650,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://thumbs.dreamstime.com/b/female-doctor-neurologist-working-clinic-female-doctor-neurologist-working-clinic-143953342.jpg",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function NeurologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 89,
       patientCount: 450,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.YmKgwfpOoin17lOs1b5-ugHaE7?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function NeurologyPage({
       visitDoctorAvailability: "Available Today",
       rating: 94,
       patientCount: 720,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.yFCiwlJT_PDP40tTJPrSAQHaEK?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function NeurologyPage({
       visitDoctorAvailability: "Not available",
       rating: 97,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.TjJg_qr_0hV4J2hDCdsv0QHaJF?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function NeurologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 88,
       patientCount: 380,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.daOlEEcK2GVO3U_dtX_d8gHaE8?pid=Api&P=0&h=180",
     },
   ]
 

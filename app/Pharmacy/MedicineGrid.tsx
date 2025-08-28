@@ -13,7 +13,7 @@ const medicines = [
     discount: 17,
     inStock: true,
     prescription: false,
-    image: "/placeholder.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthfvnext.bing.com%2Fth%2Fid%2FOIP.V7Y-gpYU2fjqV94AycDAEwHaHa%3Fcb%3Dthfvnext%26pid%3DApi&f=1&ipt=467b8596abe28316066082749e6c1a94f11a414b820751e39a36b01778f057f1&ipo=images"
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const medicines = [
     discount: 20,
     inStock: true,
     prescription: true,
-    image: "/placeholder1.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.7b_OgiPsC45t3IOt3woGvQHaFP%3Fpid%3DApi&f=1&ipt=7a25f1a78372e544d4c806a2f2d83fb4cf68cb5b0ec1034bc851ab6202d2b677&ipo=images"
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const medicines = [
     discount: 25,
     inStock: true,
     prescription: false,
-    image: "/placeholder.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.A1KF5u91X2eyMyRcvBClEgHaHa%3Fpid%3DApi&f=1&ipt=4e3db61a69af75e564dc56994b410b28b0e2c2963b73de8b36fdd2f78df70841&ipo=images"
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const medicines = [
     discount: 18,
     inStock: true,
     prescription: false,
-    image: "/placeholder-logo.png"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthf.bing.com%2Fth%2Fid%2FOIP.kMy6BzDK0FtYo1UaawkyGwHaHa%3Fcb%3Dthfc1%26pid%3DApi&f=1&ipt=fc56be685bf533a67f573f8a0ba2aa88175d0140b600afd688c92a82196a110b&ipo=images"
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const medicines = [
     discount: 22,
     inStock: true,
     prescription: false,
-    image: "/placeholder-logo.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthfvnext.bing.com%2Fth%2Fid%2FOIP.kPf4Jx2XkAq2W4a4aw_01wHaEj%3Fcb%3Dthfvnext%26pid%3DApi&f=1&ipt=50304306fe6cc4ad38e7b5a6ead5140d7878940551a54c5562a65eb0dd583cf3&ipo=images"
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ const medicines = [
     discount: 15,
     inStock: false,
     prescription: true,
-    image: "/placeholder.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.d7DoLshanxmYRGc2hK2rrgHaHa%3Fpid%3DApi&f=1&ipt=0d5711f032f126b2b9b5eecfee70e3335c9998dc87bacc60df86899be016e337&ipo=images"
   },
   {
     id: 7,
@@ -79,7 +79,7 @@ const medicines = [
     discount: 13,
     inStock: true,
     prescription: true,
-    image: "/placeholder1.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.WOjBtm2koEd6BIS38g2A_wHaHa%3Fpid%3DApi&f=1&ipt=bc6d57d06c05c76573fc0172c86f980538bad479f5de69d8d35592b413cc8d92&ipo=images"
   },
   {
     id: 8,
@@ -90,7 +90,7 @@ const medicines = [
     discount: 21,
     inStock: true,
     prescription: false,
-    image: "/placeholder.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.KCsiwZxBTjTZYaJ-Y1NmbgHaLH%3Fpid%3DApi&f=1&ipt=04d51ff34a6296e51a7af111bab3bab5da7c5673807bed948a4a6cb2c79d668b&ipo=images"
   },
   {
     id: 9,
@@ -101,7 +101,7 @@ const medicines = [
     discount: 18,
     inStock: true,
     prescription: true,
-    image: "/placeholder-logo.png"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthf.bing.com%2Fth%2Fid%2FOIP._YUERNBvUIrbvelZtu6twwHaHa%3Fcb%3Dthfc1%26pid%3DApi&f=1&ipt=7d20599aebafcbe3d6d552ab7bd137035b55ac29c4a032490ecfac23d94476fb&ipo=images"
   },
   {
     id: 10,
@@ -112,7 +112,7 @@ const medicines = [
     discount: 21,
     inStock: true,
     prescription: false,
-    image: "/placeholder-logo.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthf.bing.com%2Fth%2Fid%2FOIP.UkrC8qIgC4nmi4pjt_44wgHaHa%3Fcb%3Dthfc1%26pid%3DApi&f=1&ipt=a0d33f71e50aa3b03a0d0c91460ccc44c25c94e9a2a0c96bac932b22949b03cb&ipo=images"
   },
   {
     id: 11,
@@ -123,7 +123,7 @@ const medicines = [
     discount: 19,
     inStock: true,
     prescription: false,
-    image: "/placeholder.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.wSK5i1seEIw2OVpQ5cWATwHaHa%3Fr%3D0%26pid%3DApi&f=1&ipt=46beee0108ff0bc2f9f053fe9330a3b2956f9ab5815b5d0ada95f4b13391d294&ipo=images"
   },
   {
     id: 12,
@@ -134,7 +134,7 @@ const medicines = [
     discount: 17,
     inStock: true,
     prescription: false,
-    image: "/placeholder1.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.48WfthIVNAY-Vf73kn3XagHaNk%3Fr%3D0%26pid%3DApi&f=1&ipt=f91f497035b784df6097be4abb95a1bac1c774a3f40d87a410e0121163c3ccee&ipo=images"
   },
   {
     id: 13,
@@ -145,7 +145,7 @@ const medicines = [
     discount: 16,
     inStock: true,
     prescription: true,
-    image: "/placeholder.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fkw.rosheta.com%2Fupload%2F5fd734eb2dfac0fa1b2d687221b758685cdfceec083f168321a028a4ed58ba13.jpg&f=1&nofb=1&ipt=93d63eadeb03be3bf155ec3fafd1907146a990ac09cdfe2d5630ce184adf60ff"
   },
   {
     id: 14,
@@ -156,7 +156,7 @@ const medicines = [
     discount: 16,
     inStock: false,
     prescription: false,
-    image: "/placeholder-logo.png"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.dZWO4IXg1Gn2yZqx0HjF2QHaHa%3Fpid%3DApi&f=1&ipt=59ab43c3752b69b6e47c25316a4bae5d94fc0eb9e51bcd4f19f735b6f95e4bd2&ipo=images"
   },
   {
     id: 15,
@@ -167,7 +167,7 @@ const medicines = [
     discount: 19,
     inStock: true,
     prescription: true,
-    image: "/placeholder-logo.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.il6scHIsYyJqjnlKkFT9YgHaEK%3Fpid%3DApi&f=1&ipt=c2a94d2b003ed43e27a0ce824d9f444bf9167279b74d859414b9cd1b79d39162&ipo=images"
   },
   {
     id: 16,
@@ -178,7 +178,7 @@ const medicines = [
     discount: 16,
     inStock: true,
     prescription: true,
-    image: "/placeholder.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthfvnext.bing.com%2Fth%2Fid%2FOIP.tawt-a8yG1Lng14teJ9hCQHaFV%3Fcb%3Dthfvnext%26pid%3DApi&f=1&ipt=d8df9359a7913f728573530e93b7e7e9d979b6ea260c52fae12b16dac9054d63&ipo=images"
   },
   {
     id: 17,
@@ -189,7 +189,7 @@ const medicines = [
     discount: 16,
     inStock: true,
     prescription: true,
-    image: "/placeholder1.jpg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthfvnext.bing.com%2Fth%2Fid%2FOIP.4HyZBXw6cXBGULeflG4vsQHaHa%3Fr%3D0%26cb%3Dthfvnext%26pid%3DApi&f=1&ipt=6d2eea767ab6e4894629631c31f243e9842695d786f9799260cc73af831b56ab&ipo=images"
   },
   {
     id: 18,
@@ -200,10 +200,9 @@ const medicines = [
     discount: 14,
     inStock: true,
     prescription: true,
-    image: "/placeholder.svg"
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.08e2INmtoCLonD19WjnYdwHaHa%3Fpid%3DApi&f=1&ipt=5eb97caed7db811fc7b92bdeb411237912022a41631cf22a12ac8048819a30b2&ipo=images"
   }
 ]
-
 interface MedicineGridProps {
   onAddToCart?: (medicine?: any) => void
 }

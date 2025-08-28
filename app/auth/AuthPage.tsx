@@ -30,9 +30,9 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLoginSuccess }) => {
         
         // Try multiple endpoints to check server status
         const endpoints = [
-          'http://localhost:3001/ping',
-          'http://localhost:3001/test',
-          'http://localhost:3001/'
+          'http://localhost:3000/ping',
+          'http://localhost:3000/test',
+          'http://localhost:3000/'
         ];
         
         let serverOnline = false;
@@ -127,7 +127,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLoginSuccess }) => {
           </div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Server Unavailable</h2>
           <p className="text-gray-600 mb-6">
-            The server is currently offline. Please ensure the server is running on port 3001.
+            The server is currently offline. Please ensure the server is running on port 3000.
           </p>
           <div className="space-y-3">
             <button

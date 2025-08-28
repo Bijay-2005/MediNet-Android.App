@@ -32,7 +32,7 @@ export default function PediatricsPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 96,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.MhHzw3Pqlr_RxScyivnLaQHaE8?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function PediatricsPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 94,
       patientCount: 850,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIF.WForVNYjU6wfvwV2R4vl8w?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function PediatricsPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 92,
       patientCount: 650,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.de6Q__IYW5Er-Ll4aAt0cQHaIZ?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function PediatricsPage({
       visitDoctorAvailability: "Available Today",
       rating: 98,
       patientCount: 1500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th?id=OIF.b%2fEvWKFNBOxhq6HyYHhtyQ&pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function PediatricsPage({
       visitDoctorAvailability: "Not available",
       rating: 91,
       patientCount: 480,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.qUp85uLpmkKv_e9Q2j5aqAHaGM?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function PediatricsPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 93,
       patientCount: 720,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.UrA05sdW84086eAa1QXbQgAAAA?pid=Api&P=0&h=180",
     },
   ]
 

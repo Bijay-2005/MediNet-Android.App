@@ -16,7 +16,7 @@ import HealthTipsPage from "./pages/health-tips-page"
 import ProfilePage from "./profile/profile-page"
 import LabTestsPage from "@/app/LabTest/lab-tests-page"
 import BloodBankPage from "./BloodbanksPage/blood-bank-page"
-import HospitalBooking from "./Hospital-Booking/hospitals-page"
+import HospitalBooking from "./HospitalBooking/Hospitals/page"
 import EquipmentRentalPage from "./Medical-equipmentPages/medical-equipmentpage"
 import MentalHealthPage from "./pages/mental-health-page"
 import InsuranceDetailPage from "@/app/Insurancedetails-pages/insurance-page"
@@ -38,6 +38,7 @@ import ScheduleAppointmentPage from "./Doctors-departmnet-page/cardiology/schedu
 import MapComponent from './routes/MapComponent';
 import { AuthPage } from './auth'
 import { LogoutButton } from './auth'
+
 
     
 function MediNetAppContent() {
@@ -61,17 +62,27 @@ function MediNetAppContent() {
   const totalInsuranceCards = 5
   const [selectedDepartment, setSelectedDepartment] = useState<string | null>(null);
 
+
   // Debug logging for authentication state
   useEffect(() => {
     console.log('MediNetAppContent: Auth state changed - isAuthenticated:', isAuthenticated, 'user:', user, 'authLoading:', authLoading);
   }, [isAuthenticated, user, authLoading]);
 
-  // Loading screen effect
+
+
+  // Loading screen effect (skip when skipSplash=1 in URL)
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const skip = params.get('skipSplash');
+      if (skip === '1') {
+        setIsLoading(false);
+        return;
+      }
+    }
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); // Show loading for 4 seconds
-
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -496,22 +507,7 @@ function MediNetAppContent() {
             <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
           </div>
           
-          {/* Welcome Message */}
-          {user && (
-            <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg">
-              <div className="flex items-center gap-2">
-                <span className="text-green-600">👋</span>
-                <div>
-                  <p className="text-sm font-medium text-green-800">
-                    Welcome back, {user.name}!
-                  </p>
-                  <p className="text-xs text-green-600">
-                    Ready to take care of your health today?
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
+
         </div>
       </div>
 
@@ -1001,6 +997,8 @@ function MediNetAppContent() {
           </div>
         </div>
       )}
+
+
     </>
   )
 
@@ -1011,7 +1009,7 @@ function MediNetAppContent() {
 
       {/* Bottom Tab Bar */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-white border-t shadow-lg">
-        <div className="flex justify-around py-2">
+        <div className="flex justify-around py-2 px-2">
           {[
             { id: "home", icon: "🏠", label: "Home" },
             { id: "appointments", icon: "📅", label: "Appointments" },
@@ -1021,12 +1019,12 @@ function MediNetAppContent() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+              className={`flex flex-col items-center py-2 px-3 rounded-xl transition-colors min-w-[72px] ${
                 activeTab === tab.id ? "bg-[#2A5CAA] text-white" : "text-gray-600"
               }`}
             >
-              <span className="text-lg mb-1">{tab.icon}</span>
-              <span className="text-xs font-medium">{tab.label}</span>
+              <span className="text-xl mb-1 leading-none">{tab.icon}</span>
+              <span className="text-[11px] font-medium leading-none">{tab.label}</span>
             </button>
           ))}
         </div>

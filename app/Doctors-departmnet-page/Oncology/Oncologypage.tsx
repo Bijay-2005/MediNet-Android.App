@@ -32,7 +32,7 @@ export default function OncologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 96,
       patientCount: 950,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.t3j3x444EShs-NQ0CNic-QHaLH?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function OncologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 93,
       patientCount: 780,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.GFFvVrCu_KZh2-3T7nEZjgHaJQ?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function OncologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 98,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.wfgV4TQFaZmdDQ4jxuFjlAAAAA?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function OncologyPage({
       visitDoctorAvailability: "Available Today",
       rating: 91,
       patientCount: 650,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.5tWGhD2SSs8_WuCjiCqMRgHaLG?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function OncologyPage({
       visitDoctorAvailability: "Not available",
       rating: 99,
       patientCount: 1500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.VQR--29HjZ6o3bYgwCHNJwHaEq?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function OncologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 89,
       patientCount: 520,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.bsieywJLyzbqvXIk26bz5wHaKA?pid=Api&P=0&h=180",
     },
   ]
 

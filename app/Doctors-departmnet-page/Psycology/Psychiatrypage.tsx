@@ -32,7 +32,7 @@ export default function PsychiatryPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 94,
       patientCount: 720,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.DFNxRgQ3v8sq73jTJml2UgHaE8?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function PsychiatryPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 91,
       patientCount: 580,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.VxHvEvmfISPDLKWGdzf5fwHaE7?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function PsychiatryPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 96,
       patientCount: 890,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.RdKNnn7faqJHyrE0f4rIPwHaHa?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function PsychiatryPage({
       visitDoctorAvailability: "Available Today",
       rating: 89,
       patientCount: 450,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.hwgKVMvG9MCzkytuII2lmQAAAA?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function PsychiatryPage({
       visitDoctorAvailability: "Not available",
       rating: 98,
       patientCount: 1100,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.obX9MObPKHoa7bx66xEVagHaHa?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function PsychiatryPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 87,
       patientCount: 420,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.RqLBVS3uwK2pD7wpekWFmwHaHa?pid=Api&P=0&h=180",
     },
   ]
 

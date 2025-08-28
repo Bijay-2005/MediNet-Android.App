@@ -32,7 +32,7 @@ export default function OphthalmologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 94,
       patientCount: 750,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.n9Vgk0gQkAq1NYbx8_q5ngHaE8?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function OphthalmologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 91,
       patientCount: 620,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.C4CCFFM2q67zjDAySWDcjAHaHa?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function OphthalmologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 96,
       patientCount: 890,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.fFyoR9SRFJ55xO_9BJY10QEyDM?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function OphthalmologyPage({
       visitDoctorAvailability: "Available Today",
       rating: 89,
       patientCount: 480,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.kK89U74tb5MfleBT7ZPZGwHaEc?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function OphthalmologyPage({
       visitDoctorAvailability: "Not available",
       rating: 98,
       patientCount: 1100,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.cXJxcyD3G7povbzi0LaTKQHaFW?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function OphthalmologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 87,
       patientCount: 420,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.iyfC7sNhbDTMGpirKKf3ugHaJQ?pid=Api&P=0&h=180",
     },
   ]
 
@@ -195,4 +195,4 @@ export default function OphthalmologyPage({
       </main>
     </div>
   )
-} 
+}

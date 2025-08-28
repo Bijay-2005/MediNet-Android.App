@@ -172,26 +172,26 @@ export const MedicationsReminders = () => {
                 </Button>
               </div>
               
-              <div className="flex gap-2">
-                <Button
-                  variant={medication.taken ? "taken" : "success"}
-                  size="sm"
-                  onClick={() => handleTakeMedication(medication.id)}
-                  className="flex-1 text-xs h-8"
-                >
-                  <Check className="w-3 h-3 mr-1" />
-                  {medication.taken ? "Taken ✓" : "Mark Taken"}
-                </Button>
-                <Button
-                  variant="medical"
-                  size="sm"
-                  onClick={() => handleConfigureReminder(medication)}
-                  className="flex-1 text-xs h-8"
-                >
-                  <Settings className="w-3 h-3 mr-1" />
-                  Configure Reminder
-                </Button>
-              </div>
+                              <div className="flex gap-2">
+                  <Button
+                    variant={medication.taken ? "secondary" : "default"}
+                    size="sm"
+                    onClick={() => handleTakeMedication(medication.id)}
+                    className={`flex-1 text-xs h-8 ${medication.taken ? "bg-green-100 text-green-700 border-green-200" : ""}`}
+                  >
+                    <Check className="w-3 h-3 mr-1" />
+                    {medication.taken ? "Taken ✓" : "Mark Taken"}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleConfigureReminder(medication)}
+                    className="flex-1 text-xs h-8"
+                  >
+                    <Settings className="w-3 h-3 mr-1" />
+                    Configure Reminder
+                  </Button>
+                </div>
               
               {medication.status === 'overdue' && (
                 <div className="text-xs text-destructive bg-destructive/10 p-2 rounded">

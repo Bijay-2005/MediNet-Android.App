@@ -32,7 +32,7 @@ export default function CardiologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 92,
       patientCount: 500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.jVoZeLe9HUwwTivkD-ME9wHaE8?pid=Api&P=0&h=180"
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function CardiologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 88,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.P4nq-yLCZQlZryKBaUAUrwHaFX?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function CardiologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 90,
       patientCount: 25,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.pzMXJ_YDGDVi2jFzTxqSqgHaHa?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function CardiologyPage({
       visitDoctorAvailability: "Available Today",
       rating: 95,
       patientCount: 750,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.eT7iZlNLjtWDVyXr5zgMIgHaE8?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function CardiologyPage({
       visitDoctorAvailability: "Not available",
       rating: 98,
       patientCount: 375,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.tpwIGDxcJvfCe5cC3zMc2wHaLM?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function CardiologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 85,
       patientCount: 150,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.iZGg9SiKL4r91TnoB-HpBAAAAA?pid=Api&P=0&h=180",
     },
   ]
 

@@ -80,7 +80,7 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
       const endpoint = type === 'signup' ? '/otp/send-signup-otp' : '/otp/send-login-otp';
       const body = type === 'signup' ? { email, name: userName || 'User' } : { email };
       
-      const response = await fetch(`http://localhost:3001${endpoint}`, {
+      const response = await fetch(`http://localhost:3000${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
     setVerificationStatus('idle');
     
     try {
-      const response = await fetch('http://localhost:3001/otp/verify-otp', {
+      const response = await fetch('http://localhost:3000/otp/verify-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

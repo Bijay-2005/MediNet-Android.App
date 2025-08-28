@@ -8,106 +8,106 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, MapPin, ArrowLeft } from "lucide-react"
 import { useState } from "react"
 
-export default function GynecologyPage({ 
+export default function NeurologyPage({ 
   onScheduleAppointment, 
   onBackToDepartments 
 }: { 
   onScheduleAppointment?: (doctorId: string, type: string) => void
   onBackToDepartments?: () => void
 }) {
-  console.log("GynecologyPage component is rendering")
+  console.log("NeurologyPage component is rendering")
   const [searchQuery, setSearchQuery] = useState("")
 
   const doctors = [
     {
       id: "1",
-      name: "Dr. Priya Sharma",
-      specialization: "Gynecologist",
+      name: "Dr. Rajesh Kumar",
+      specialization: "Neurologist",
       experience: "25 YEARS",
-      degrees: "MBBS, MD(GYNECOLOGY), DGO...",
-      clinic: "Women's Health Center",
+      degrees: "MBBS, MD(NEUROLOGY), DM...",
+      clinic: "Brain & Spine Institute",
       location: "Mumbai",
-      fees: 2000,
+      fees: 2500,
       onlineConsultAvailability: "Available Today",
       visitDoctorAvailability: "Available Tomorrow",
-      rating: 96,
-      patientCount: 1800,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      rating: 95,
+      patientCount: 800,
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.LEB5K8CmmB7Atsn1g8MQGAHaHa?pid=Api&P=0&h=180",
     },
     {
       id: "2",
-      name: "Dr. Anjali Desai",
-      specialization: "Gynecologist",
-      experience: "20 YEARS",
-      degrees: "MBBS, MD(GYNECOLOGY), DGO...",
-      clinic: "Lady Care Clinic",
+      name: "Dr. Priya Sharma",
+      specialization: "Neurologist",
+      experience: "18 YEARS",
+      degrees: "MBBS, MD(NEUROLOGY), DM...",
+      clinic: "NeuroCare Center",
       location: "Delhi",
       fees: 1800,
       onlineConsultAvailability: "Available in 30 mins",
       visitDoctorAvailability: "No Booking Fees",
-      rating: 94,
-      patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      rating: 92,
+      patientCount: 650,
+      imageSrc: "https://thumbs.dreamstime.com/b/female-doctor-neurologist-working-clinic-female-doctor-neurologist-working-clinic-143953342.jpg",
     },
     {
       id: "3",
-      name: "Dr. Meera Patel",
-      specialization: "Gynecologist",
+      name: "Dr. Amit Patel",
+      specialization: "Neurologist",
       experience: "22 YEARS",
-      degrees: "MBBS, MD(GYNECOLOGY), DGO...",
-      clinic: "Women's Wellness Clinic",
+      degrees: "MBBS, MD(NEUROLOGY), DM...",
+      clinic: "Advanced Neurology Clinic",
       location: "Bangalore",
       fees: 2200,
       onlineConsultAvailability: "Available Today",
       visitDoctorAvailability: "Available Tomorrow",
-      rating: 95,
-      patientCount: 1500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      rating: 89,
+      patientCount: 450,
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.YmKgwfpOoin17lOs1b5-ugHaE7?pid=Api&P=0&h=180",
     },
     {
       id: "4",
       name: "Dr. Sunita Reddy",
-      specialization: "Gynecologist",
-      experience: "18 YEARS",
-      degrees: "MBBS, MD(GYNECOLOGY), DGO...",
-      clinic: "GyneCare Center",
-      location: "Chennai",
+      specialization: "Neurologist",
+      experience: "20 YEARS",
+      degrees: "MBBS, MD(NEUROLOGY), DM...",
+      clinic: "Neuro Solutions",
+      location: "Hyderabad",
       fees: 1600,
       onlineConsultAvailability: "Not available",
       visitDoctorAvailability: "Available Today",
-      rating: 92,
-      patientCount: 900,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      rating: 94,
+      patientCount: 720,
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.yFCiwlJT_PDP40tTJPrSAQHaEK?pid=Api&P=0&h=180",
     },
     {
       id: "5",
-      name: "Dr. Kavita Singh",
-      specialization: "Gynecologist",
+      name: "Dr. Vikram Singh",
+      specialization: "Neurologist",
       experience: "28 YEARS",
-      degrees: "MBBS, MD(GYNECOLOGY), DGO...",
-      clinic: "Women's Hospital",
-      location: "Hyderabad",
-      fees: 2500,
+      degrees: "MBBS, MD(NEUROLOGY), DM...",
+      clinic: "Brain & Nerve Hospital",
+      location: "Chennai",
+      fees: 3000,
       onlineConsultAvailability: "Available in 15 mins",
       visitDoctorAvailability: "Not available",
-      rating: 98,
-      patientCount: 2200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      rating: 97,
+      patientCount: 1200,
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.TjJg_qr_0hV4J2hDCdsv0QHaJF?pid=Api&P=0&h=180",
     },
     {
       id: "6",
-      name: "Dr. Rekha Iyer",
-      specialization: "Gynecologist",
+      name: "Dr. Meera Iyer",
+      specialization: "Neurologist",
       experience: "15 YEARS",
-      degrees: "MBBS, MD(GYNECOLOGY), DGO...",
-      clinic: "Lady Health Clinic",
+      degrees: "MBBS, MD(NEUROLOGY), DM...",
+      clinic: "NeuroMed Clinic",
       location: "Pune",
       fees: 1400,
       onlineConsultAvailability: "Available in 2 minutes",
       visitDoctorAvailability: "No Booking Fees",
-      rating: 91,
-      patientCount: 750,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      rating: 88,
+      patientCount: 380,
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.daOlEEcK2GVO3U_dtX_d8gHaE8?pid=Api&P=0&h=180",
     },
   ]
 
@@ -138,8 +138,8 @@ export default function GynecologyPage({
               <SelectItem value="mumbai">Mumbai</SelectItem>
               <SelectItem value="delhi">Delhi</SelectItem>
               <SelectItem value="bangalore">Bangalore</SelectItem>
-              <SelectItem value="chennai">Chennai</SelectItem>
               <SelectItem value="hyderabad">Hyderabad</SelectItem>
+              <SelectItem value="chennai">Chennai</SelectItem>
               <SelectItem value="pune">Pune</SelectItem>
             </SelectContent>
           </Select>
@@ -182,7 +182,7 @@ export default function GynecologyPage({
         </div>
 
         <h2 className="text-xl font-bold text-gray-800">
-          Consult Gynecologists Online - Women's Health Specialists ({filteredDoctors.length} doctors)
+          Consult Neurologists Online - Brain & Nerve Specialists ({filteredDoctors.length} doctors)
         </h2>
 
         <div className="grid gap-4">

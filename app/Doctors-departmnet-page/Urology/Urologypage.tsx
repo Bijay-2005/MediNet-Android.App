@@ -32,7 +32,7 @@ export default function UrologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 95,
       patientCount: 850,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.Z5rJWW6n8IIo8dH50ALmmAHaF_?pid=Api&P=0&h=180",
     },
     {
       id: "2",
@@ -47,7 +47,7 @@ export default function UrologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 92,
       patientCount: 680,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.7TRImGCOmEYNy6jJBWthRAHaFn?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -62,7 +62,7 @@ export default function UrologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 97,
       patientCount: 1100,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.1eDj2_mMeVfbl7L512JbDgHaEK?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -77,7 +77,7 @@ export default function UrologyPage({
       visitDoctorAvailability: "Available Today",
       rating: 89,
       patientCount: 520,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.211V_0Mif6xNHW7kAv-UdwHaKX?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -92,7 +92,7 @@ export default function UrologyPage({
       visitDoctorAvailability: "Not available",
       rating: 98,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP._oJhY8p3jeFOENLO3smXlgAAAA?pid=Api&P=0&h=180",
     },
     {
       id: "6",
@@ -107,7 +107,7 @@ export default function UrologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 87,
       patientCount: 450,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.v02JvvGGxryqp36Wn_MxPQAAAA?pid=Api&P=0&h=180",
     },
   ]
 

@@ -22,7 +22,7 @@ export default function DermatologyPage({
   const doctors = [
     {
       id: "1",
-      name: "Dr.Kumar sanu",
+      name: "Dr.Isabella Romano",
       specialization: "Dermatologist",
       experience: "22 YEARS",
       degrees: "MBBS, MD(DERMATOLOGY), D...",
@@ -33,11 +33,11 @@ export default function DermatologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 92,
       patientCount: 500,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse1.mm.bing.net/th/id/OIP.2UoKY6C9WZPBVOR_Ippj3gHaHg?pid=Api&P=0&h=180",
     },
     {
       id: "2",
-      name: "Dr.Rajesh kumar",
+      name: "Dr.Sofia Mendez",
       specialization: "Dermatologist",
       experience: "35 YEARS",
       degrees: "MBBS, MD(DERMATOLOGY), D...",
@@ -48,7 +48,7 @@ export default function DermatologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 88,
       patientCount: 1200,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse3.mm.bing.net/th/id/OIP.iwq16XFeTIk_ZXD51loDMQHaEK?pid=Api&P=0&h=180",
     },
     {
       id: "3",
@@ -63,7 +63,7 @@ export default function DermatologyPage({
       visitDoctorAvailability: "Available Tomorrow",
       rating: 90,
       patientCount: 25,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.-g8m8-U_g2Wy5K5jkDUEmAAAAA?pid=Api&P=0&h=180",
     },
     {
       id: "4",
@@ -78,7 +78,7 @@ export default function DermatologyPage({
       visitDoctorAvailability: "Available Today",
       rating: 95,
       patientCount: 750,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.pztRehaCj5_SIq7mdrzF8gHaE8?pid=Api&P=0&h=180",
     },
     {
       id: "5",
@@ -93,11 +93,11 @@ export default function DermatologyPage({
       visitDoctorAvailability: "Not available",
       rating: 98,
       patientCount: 375,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse2.mm.bing.net/th/id/OIP.fWRxVD5GskGcwJfSF-SQfQHaGH?pid=Api&P=0&h=180",
     },
     {
       id: "6",
-        name: "Dr. Nikunja Dash",
+        name: "Dr. Kiara Moretti",
       specialization: "Dermatologist",
       experience: "15 YEARS",
       degrees: "MBBS, MD(DERMATOLOGY), D...",
@@ -108,7 +108,7 @@ export default function DermatologyPage({
       visitDoctorAvailability: "No Booking Fees",
       rating: 85,
       patientCount: 150,
-      imageSrc: "/placeholder.svg?height=80&width=80",
+      imageSrc: "https://tse4.mm.bing.net/th/id/OIP.Yc6Ygn2GfgmpccC3yKw1QwHaHk?pid=Api&P=0&h=180",
     },
   ]
 
