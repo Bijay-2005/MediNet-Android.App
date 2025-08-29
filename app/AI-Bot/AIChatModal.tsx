@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,6 +6,12 @@ import ReactMarkdown from "react-markdown";
 
 const OPENROUTER_API_URL = process.env.NEXT_PUBLIC_OPENROUTER_API_URL || "https://openrouter.ai/api/v1/chat/completions";
 const OPENROUTER_API_KEY = process.env.NEXT_PUBLIC_OPENROUTER_API_KEY;
+
+// Debug: verify env availability in browser at runtime without exposing the key
+if (typeof window !== 'undefined') {
+  // eslint-disable-next-line no-console
+  console.log('AIChat: OPENROUTER key present?', Boolean(OPENROUTER_API_KEY));
+}
 
 const SYSTEM_PROMPT = `
 You are MediBot, a friendly and professional medical assistant. Follow these rules:
@@ -68,16 +75,29 @@ export default function AIChatModal({ onClose }: { onClose: () => void }) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! 👋 I'm your health assistant. How can I help you with any medical questions today?",
+      content: "Hello! 😇 I'm your health assistant. How can I help you today?",
     },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [cooldownMs, setCooldownMs] = useState(0);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Handle rate-limit cooldown countdown
+  useEffect(() => {
+    if (cooldownMs <= 0) return;
+    const interval = setInterval(() => {
+      setCooldownMs((ms) => {
+        const next = Math.max(0, ms - 1000);
+        return next;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [cooldownMs]);
 
   const isMedicalQuery = (query: string) => {
     const lowerQuery = query.toLowerCase();
@@ -141,7 +161,10 @@ export default function AIChatModal({ onClose }: { onClose: () => void }) {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          // Recommended OpenRouter headers for better routing/debugging
+          "HTTP-Referer": typeof window !== 'undefined' ? window.location.origin : '',
+          "X-Title": "MediBot"
         },
         body: JSON.stringify({
           model: "deepseek/deepseek-chat-v3-0324:free",
@@ -155,14 +178,51 @@ export default function AIChatModal({ onClose }: { onClose: () => void }) {
         }),
       });
 
+      // Diagnostic logging
+      if (typeof window !== 'undefined') {
+        // eslint-disable-next-line no-console
+        console.log('AIChat: response.ok', response.ok, 'status', response.status);
+      }
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        let friendly = '**System Error**\n\nPlease try your medical question again.';
+        if (response.status === 401 || response.status === 403) friendly = '**Auth Error**\n\nInvalid or expired API key.';
+        else if (response.status === 429) {
+          friendly = '**Rate Limit**\n\nToo many requests. Please wait and try again.';
+          // Respect server-provided backoff when available
+          const retryAfterHeader = response.headers.get('retry-after');
+          let retryAfterMs = 15000;
+          if (retryAfterHeader) {
+            const parsedSeconds = parseInt(retryAfterHeader, 10);
+            if (!Number.isNaN(parsedSeconds) && parsedSeconds > 0) {
+              retryAfterMs = parsedSeconds * 1000;
+            }
+          }
+          setCooldownMs((prev) => (prev > 0 ? prev : retryAfterMs));
+        }
+        else if (response.status >= 500) friendly = '**Service Unavailable**\n\nOpenRouter is unavailable. Try again later.';
+
+        if (typeof window !== 'undefined') {
+          // eslint-disable-next-line no-console
+          console.error('AIChat: error response', response.status, errorText);
+        }
+        setMessages(prev => [...prev, { role: 'assistant', content: `${friendly}\n\n(Code ${response.status})` }]);
+        return;
+      }
+
       const data = await response.json();
       const aiMessage = data.choices[0]?.message?.content || "I couldn't process that request.";
       
       setMessages(prev => [...prev, { role: "assistant", content: aiMessage }]);
     } catch (err) {
+      if (typeof window !== 'undefined') {
+        // eslint-disable-next-line no-console
+        console.error('AIChat: request failed', err);
+      }
       const errorMessage = err instanceof Error && err.message === "API key not configured"
         ? "**Configuration Error**\n\nAPI key not configured. Please check your environment variables."
-        : "**System Error**\n\nPlease try your medical question again.";
+        : "**Network Error**\n\nCould not reach the AI service. Check your connection and try again.";
       
       setMessages(prev => [...prev, {
         role: "assistant",
@@ -224,19 +284,25 @@ export default function AIChatModal({ onClose }: { onClose: () => void }) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              disabled={loading}
+              disabled={loading || cooldownMs > 0}
             />
             <Button
               className="bg-blue-600 hover:bg-blue-700 text-white"
               onClick={sendMessage}
-              disabled={loading}
+              disabled={loading || cooldownMs > 0}
             >
-              {loading ? "..." : "Ask"}
+              {loading ? "..." : (cooldownMs > 0 ? `Wait ${Math.ceil(cooldownMs/1000)}s` : "Ask")}
             </Button>
           </div>
-          <p className="text-xs text-gray-500 mt-2 text-center">
-            *Professional medical information only
-          </p>
+          <div className="mt-2 text-center">
+            {cooldownMs > 0 ? (
+              <p className="text-xs text-amber-600">
+                Rate limit active. Please wait {Math.ceil(cooldownMs/1000)}s before trying again.
+              </p>
+            ) : (
+              <p className="text-xs text-gray-500">*Professional medical information only</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
