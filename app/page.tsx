@@ -10,7 +10,7 @@ import LoadingScreen from "./LoadingScreen"
 
 // Import page components
 import { AuthProvider, useAuth } from "./routes/auth-context"
-import AppointmentsPage from "./pages/appointments-page"
+import AppointmentsPage from "./routes/appointments-page"
 import PharmacyPage from "./Pharmacy/pharmacy-page"
 import HealthTipsPage from "./pages/health-tips-page"
 import ProfilePage from "./profile/profile-page"

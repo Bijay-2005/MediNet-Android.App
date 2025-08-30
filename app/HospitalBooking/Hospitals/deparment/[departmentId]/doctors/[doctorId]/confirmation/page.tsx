@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { ArrowLeft, CheckCircle, Calendar, Clock, User, Phone, Download, Share2 } from "lucide-react"
+import { CheckCircle, Calendar, Clock, User, Phone, Download, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -66,13 +66,64 @@ export default function ConfirmationPage() {
     // Retrieve payment data from localStorage
     const storedData = localStorage.getItem("paymentData")
     if (storedData) {
-      setPaymentData(JSON.parse(storedData))
+      const parsedData = JSON.parse(storedData)
+      setPaymentData(parsedData)
       setShowSuccess(true)
+      
+      // Save appointment to database
+      saveAppointmentToDatabase(parsedData)
     } else {
       // Redirect to home if no payment data
       router.push("/")
     }
   }, [router])
+
+  const saveAppointmentToDatabase = async (appointmentData: PaymentData) => {
+    try {
+      const token = localStorage.getItem('token') // Get auth token
+      if (!token) {
+        console.log('No auth token found, appointment will not be saved to database')
+        return
+      }
+
+      const appointmentPayload = {
+        hospitalId,
+        hospitalName,
+        hospitalAddress,
+        departmentId: params.departmentId,
+        doctorId,
+        doctorName: doctor?.name || 'Unknown Doctor',
+        doctorSpecialization: doctor?.specialization || 'Unknown Specialization',
+        patientName: appointmentData.appointmentData.patientName,
+        patientAge: appointmentData.appointmentData.patientAge,
+        patientPhone: appointmentData.appointmentData.patientPhone,
+        symptoms: appointmentData.appointmentData.symptoms,
+        selectedDate: appointmentData.appointmentData.selectedDate,
+        selectedTime: appointmentData.appointmentData.selectedTime,
+        consultationFee: appointmentData.appointmentData.consultationFee,
+        transactionId: appointmentData.transactionId
+      }
+
+      const response = await fetch('http://localhost:3001/appointments/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(appointmentPayload)
+      })
+
+      if (response.ok) {
+        console.log('Appointment saved to database successfully')
+        // Clear localStorage after successful save
+        localStorage.removeItem("paymentData")
+      } else {
+        console.error('Failed to save appointment to database')
+      }
+    } catch (error) {
+      console.error('Error saving appointment to database:', error)
+    }
+  }
 
   const downloadAppointmentDetails = () => {
     if (!paymentData) return
@@ -136,9 +187,6 @@ Bring your ID proof and any relevant medical reports.
       <div className="sticky top-0 z-10 bg-background border-b border-border p-3">
         <div className="w-full max-w-full md:max-w-md mx-auto px-2">
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" onClick={() => router.push("/")} className="p-2 bg-transparent hover:bg-gray-100 rounded-full transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-            </Button>
             <div>
               <h1 className="font-semibold text-lg text-balance">Appointment Confirmed!</h1>
               <p className="text-sm text-muted-foreground">Details below</p>
